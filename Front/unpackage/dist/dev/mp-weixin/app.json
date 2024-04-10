@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/first/index",
+    "pages/first/workbenchEntrance",
+    "pages/first/user",
+    "pages/createEdit/itemCreateEdit",
+    "pages/createEdit/teamCreateEdit",
+    "pages/createEdit/userEdit",
+    "pages/show/itemShow",
+    "pages/show/teamMemberShow",
+    "pages/show/teamShow",
+    "pages/show/userShow",
+    "pages/workbench/workbenchMember",
+    "pages/workbench/workbenchLeader",
+    "pages/search"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/first/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/first/workbenchEntrance",
+        "text": "团队"
+      },
+      {
+        "pagePath": "pages/first/user",
+        "text": "我"
+      }
+    ]
+  },
+  "usingComponents": {}
+}

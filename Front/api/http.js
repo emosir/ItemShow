@@ -21,7 +21,7 @@ const http = (url, method = 'GET', data = {},contentType='application/json') => 
     });
 };
 
-const urlPrefix = 'http://localhost:8080/ItemShow';
+const urlPrefix = 'http://localhost:8080/itemShow';
 
 
 export default {http,urlPrefix};

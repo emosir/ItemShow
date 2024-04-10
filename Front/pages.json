@@ -23,6 +23,8 @@
 		"path": "pages/workbench/workbenchMember"
 	},{
 		"path": "pages/workbench/workbenchLeader"
+	},{
+		"path": "pages/search"
 	}],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
@@ -36,19 +38,13 @@
 		"borderStyle": "black",
 		"backgroundColor": "#ffffff",
 		"list": [{
-			"pagePath": "pages/index/index",
-			"iconPath": "static/tabbar/indexUnchoose.png",
-			"selectedIconPath": "static/tabbar/indexChoose.png",
+			"pagePath": "pages/first/index",
 			"text": "首页"
 		},{
-			"pagePath": "pages/workbenchEntrance/workbenchEntrance",
-			"iconPath": "static/tabbar/userUnchoose.png",
-			"selectedIconPath": "static/tabbar/userChoose.png",
+			"pagePath": "pages/first/workbenchEntrance",
 			"text": "团队"
 		},{
-			"pagePath": "pages/user/user",
-			"iconPath": "static/tabbar/userUnchoose.png",
-			"selectedIconPath": "static/tabbar/userChoose.png",
+			"pagePath": "pages/first/user",
 			"text": "我"
 		}
 		]

@@ -1,50 +1,45 @@
 <template>
   <view>
-    <template v-for="show in shows" :key="show.id">
-      <uni-card  :title="show.name" :thumbnail="show.imagePath[0]">
+    <template v-for="show in shows" ><!--:key="show.id"-->
+      <uni-card  :title="show.name" :thumbnail="show.imagePath[0]" clickable link @tap="gotoShow(show)">
         <text>{{show.description}}</text>
       </uni-card>
     </template>
-    <uni-pagination :show-icon="true" :total=total></uni-pagination>
+    <uni-pagination :show-icon="true" :total=total :current=current :pageSize=pageSize @tap="changePage"></uni-pagination>
   </view>
 
 </template>
 
 
 <script>
+import stringOpe from "../common/stringOpe";
+
 export default {
   name: "overview",
-  props:['shows'],//父组件传递的参数
-  data() {
-    return {
-      current: 1,
-      total: 1,
-      pageSize: 5
+  props:['shows','total','pageSize'],
+  data(){
+    return{
+      current:1
     }
-  },
-  mounted() {
-    setTimeout(() => {
-      this.current = 5
-    }, 3000)
   },
   methods: {
-    gotoPreview(preview){
-      console.log(preview)
+    gotoShow(show) {
+      const type = stringOpe.checkId(show.id);
+      const showType = ["userShow", "itemShow", "teamShow"][type];
+      if (!showType) {
+        console.log("id错误，overview/43");
+        return;
+      }
       uni.navigateTo({
-        url: '/pages/preview/preview?preview='+encodeURIComponent(JSON.stringify(preview))
+        url: `/pages/show/${showType}?show=${encodeURIComponent(JSON.stringify(show))}`
       });
     },
-    add() {
-      this.total += 10
-    },
-    reset() {
-      this.total = 0
-      this.current = 1
-    },
-    change(e) {
-      console.log(e)
-      this.current = e.current
+
+    changePage(params) {
+      this.current = params.current;
+      this.$parent.getShows(this.current)
     }
+
   }
 }
 </script>
