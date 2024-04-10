@@ -1,10 +1,10 @@
 <template>
   <view>
-    <template v-for="show in shows" ><!--:key="show.id"-->
+    <view v-for="show in shows" :key="show.id" >
       <uni-card  :title="show.name" :thumbnail="show.imagePath[0]" clickable link @tap="gotoShow(show)">
         <text>{{show.description}}</text>
       </uni-card>
-    </template>
+    </view>
     <uni-pagination :show-icon="true" :total=total :current=current :pageSize=pageSize @tap="changePage"></uni-pagination>
   </view>
 
@@ -19,7 +19,7 @@ export default {
   props:['shows','total','pageSize'],
   data(){
     return{
-      current:1
+      current:1,
     }
   },
   methods: {

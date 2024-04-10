@@ -5,6 +5,7 @@ const showsOpe = {
     // 下载shows的头像并保存到imagePaths
     getHeadImages: (shows) => {
         let promises = [];
+        console.log(shows)
         for (let show of shows) {
             let promise = new Promise((resolve, reject) => {
                 if(!show.imagePaths)

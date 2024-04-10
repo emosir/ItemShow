@@ -5,8 +5,9 @@
       <uni-search-bar @confirm="gotoSearch" :focus="true" v-model="input" placeholder="搜索..."></uni-search-bar>
     </view>
     <view>
+      <text @tap="changeShows">{{displayInfo}}</text>
       <template>
-        <overview :items="displayItems" :page-size="pageSize" :total="total"></overview>
+        <overview :shows="displayItems" :pageSize="pageSize" :total="total"></overview>
       </template>
     </view>
   </view>
@@ -26,6 +27,9 @@
       },
       displayItems() {
         return this.flag ? this.hotItems : this.newItems;
+      },
+      displayInfo(){
+        return this.flag?"最新":"最热"
       }
     },
 		data() {
@@ -39,7 +43,7 @@
 			}
 		},
 		onLoad() {
-
+      this.getShows(1)
 		},
 		methods: {
       gotoSearch(){
@@ -52,6 +56,13 @@
         itemApi.getNewOrHotItems(kind,current).then(res=>{
           this.pageSize=res.data.pageSize
           this.total=res.data.total
+          if(this.flag)
+            this.hotItems=res.data.items
+          else
+            this.newItems=res.data.items
+          console.log(this.hotItems)
+          console.log(this.newItems)
+          console.log(1)
           showsOpe.getHeadImages(res.data.items).then(shows=>{
             if(this.flag)
               this.hotItems=shows
@@ -63,6 +74,12 @@
         }).catch(err=>{
           console.log(err)
         })
+      },
+      changeShows(){
+        this.flag=!this.flag
+        this.pageSize=5
+        this.total=1
+        this.getShows(1)
       }
 		}
 	}

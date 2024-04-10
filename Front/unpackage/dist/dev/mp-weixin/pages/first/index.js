@@ -180,6 +180,7 @@ var _showsOpe = _interopRequireDefault(__webpack_require__(/*! ../../common/show
 //
 //
 //
+//
 var Overview = function Overview() {
   Promise.all(/*! require.ensure | component/overview */[__webpack_require__.e("common/vendor"), __webpack_require__.e("component/overview")]).then((function () {
     return resolve(__webpack_require__(/*! ../../component/overview.vue */ 127));
@@ -195,6 +196,9 @@ var _default = {
     },
     displayItems: function displayItems() {
       return this.flag ? this.hotItems : this.newItems;
+    },
+    displayInfo: function displayInfo() {
+      return this.flag ? "最新" : "最热";
     }
   },
   data: function data() {
@@ -208,7 +212,9 @@ var _default = {
       total: 1
     };
   },
-  onLoad: function onLoad() {},
+  onLoad: function onLoad() {
+    this.getShows(1);
+  },
   methods: {
     gotoSearch: function gotoSearch() {
       uni.navigateTo({
@@ -221,6 +227,10 @@ var _default = {
       _item.default.getNewOrHotItems(kind, current).then(function (res) {
         _this.pageSize = res.data.pageSize;
         _this.total = res.data.total;
+        if (_this.flag) _this.hotItems = res.data.items;else _this.newItems = res.data.items;
+        console.log(_this.hotItems);
+        console.log(_this.newItems);
+        console.log(1);
         _showsOpe.default.getHeadImages(res.data.items).then(function (shows) {
           if (_this.flag) _this.hotItems = shows;else _this.newItems = shows;
         }).catch(function (err) {
@@ -229,6 +239,12 @@ var _default = {
       }).catch(function (err) {
         console.log(err);
       });
+    },
+    changeShows: function changeShows() {
+      this.flag = !this.flag;
+      this.pageSize = 5;
+      this.total = 1;
+      this.getShows(1);
     }
   }
 };
