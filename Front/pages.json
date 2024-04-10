@@ -1,17 +1,57 @@
 {
-	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-		{
-			"path": "pages/index/index",
-			"style": {
-				"navigationBarTitleText": "uni-app"
-			}
-		}
-	],
+	"pages": [{
+		"path": "pages/first/index"
+	},{
+		"path": "pages/first/workbenchEntrance"
+	},{
+		"path": "pages/first/user"
+	},{
+		"path": "pages/createEdit/itemCreateEdit"
+	},{
+		"path": "pages/createEdit/teamCreateEdit"
+	},{
+		"path": "pages/createEdit/userEdit"
+	},{
+		"path": "pages/show/itemShow"
+	},{
+		"path": "pages/show/teamMemberShow"
+	},{
+		"path": "pages/show/teamShow"
+	},{
+		"path": "pages/show/userShow"
+	},{
+		"path": "pages/workbench/workbenchMember"
+	},{
+		"path": "pages/workbench/workbenchLeader"
+	}],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#3cc51f",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [{
+			"pagePath": "pages/index/index",
+			"iconPath": "static/tabbar/indexUnchoose.png",
+			"selectedIconPath": "static/tabbar/indexChoose.png",
+			"text": "首页"
+		},{
+			"pagePath": "pages/workbenchEntrance/workbenchEntrance",
+			"iconPath": "static/tabbar/userUnchoose.png",
+			"selectedIconPath": "static/tabbar/userChoose.png",
+			"text": "团队"
+		},{
+			"pagePath": "pages/user/user",
+			"iconPath": "static/tabbar/userUnchoose.png",
+			"selectedIconPath": "static/tabbar/userChoose.png",
+			"text": "我"
+		}
+		]
 	},
 	"uniIdRouter": {}
 }
