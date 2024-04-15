@@ -96,29 +96,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "recyclableRender", function() { return recyclableRender; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
 var components
-try {
-  components = {
-    uniSearchBar: function () {
-      return Promise.all(/*! import() | uni_modules/uni-search-bar/components/uni-search-bar/uni-search-bar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-search-bar/components/uni-search-bar/uni-search-bar")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-search-bar/components/uni-search-bar/uni-search-bar.vue */ 116))
-    },
-  }
-} catch (e) {
-  if (
-    e.message.indexOf("Cannot find module") !== -1 &&
-    e.message.indexOf(".vue") !== -1
-  ) {
-    console.error(e.message)
-    console.error("1. 排查组件名称拼写是否正确")
-    console.error(
-      "2. 排查组件是否符合 easycom 规范，文档：https://uniapp.dcloud.net.cn/collocation/pages?id=easycom"
-    )
-    console.error(
-      "3. 若组件不符合 easycom 规范，需手动引入，并在 components 中注册该组件"
-    )
-  } else {
-    throw e
-  }
-}
 var render = function () {
   var _vm = this
   var _h = _vm.$createElement
@@ -156,19 +133,15 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {
+
 
 var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ 4);
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-var _platStatic2 = _interopRequireDefault(__webpack_require__(/*! ../../common/platStatic */ 39));
 var _item = _interopRequireDefault(__webpack_require__(/*! ../../api/item */ 40));
 var _showsOpe = _interopRequireDefault(__webpack_require__(/*! ../../common/showsOpe */ 42));
-//
-//
-//
 //
 //
 //
@@ -186,14 +159,17 @@ var Overview = function Overview() {
     return resolve(__webpack_require__(/*! ../../component/overview.vue */ 127));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
+var SearchBar = function SearchBar() {
+  Promise.all(/*! require.ensure | component/searchBar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("component/searchBar")]).then((function () {
+    return resolve(__webpack_require__(/*! ../../component/searchBar.vue */ 166));
+  }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
+};
 var _default = {
   components: {
+    SearchBar: SearchBar,
     Overview: Overview
   },
   computed: {
-    platStatic: function platStatic() {
-      return _platStatic2.default;
-    },
     displayItems: function displayItems() {
       return this.flag ? this.hotItems : this.newItems;
     },
@@ -203,7 +179,6 @@ var _default = {
   },
   data: function data() {
     return {
-      input: "",
       hotItems: [],
       newItems: [],
       flag: true,
@@ -216,22 +191,15 @@ var _default = {
     this.getShows(1);
   },
   methods: {
-    gotoSearch: function gotoSearch() {
-      uni.navigateTo({
-        url: "/pages/search?input=".concat(encodeURIComponent(JSON.stringify(this.input)))
-      });
-    },
+    //分页获取项目、同时获取图片，
     getShows: function getShows(current) {
       var _this = this;
       var kind = this.flag ? 0 : 1;
       _item.default.getNewOrHotItems(kind, current).then(function (res) {
-        _this.pageSize = res.data.pageSize;
-        _this.total = res.data.total;
-        if (_this.flag) _this.hotItems = res.data.items;else _this.newItems = res.data.items;
-        console.log(_this.hotItems);
-        console.log(_this.newItems);
-        console.log(1);
-        _showsOpe.default.getHeadImages(res.data.items).then(function (shows) {
+        _this.pageSize = res.data.data.pageSize;
+        _this.total = res.data.data.total;
+        if (_this.flag) _this.hotItems = res.data.data.items;else _this.newItems = res.data.data.items;
+        _showsOpe.default.getHeadImages(res.data.data.items).then(function (shows) {
           if (_this.flag) _this.hotItems = shows;else _this.newItems = shows;
         }).catch(function (err) {
           console.log(err);
@@ -240,6 +208,7 @@ var _default = {
         console.log(err);
       });
     },
+    //更改要展示的数据，同时获取目标数据的第一页数据
     changeShows: function changeShows() {
       this.flag = !this.flag;
       this.pageSize = 5;
@@ -249,7 +218,6 @@ var _default = {
   }
 };
 exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ })
 

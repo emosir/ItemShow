@@ -9,12 +9,17 @@ const http = (url, method = 'GET', data = {},contentType='application/json') => 
             },
             success: (res) => {
                 if (res.data.code === 200) {
+                    console.log("成功：200，成功：200")
+                    console.log(res.data)
                     resolve(res);
                 } else {
+                    console.log("成功：200，失败")
+                    console.log(res.data.msg)
                     reject(res);
                 }
             },
             fail: (error) => {
+                console.log("失败，失败"+error)
                 reject(error);
             }
         });

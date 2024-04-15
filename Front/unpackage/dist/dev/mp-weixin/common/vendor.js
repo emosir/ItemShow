@@ -1557,7 +1557,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"Front","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"Front","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -8934,7 +8934,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"Front","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"NODE_ENV":"development","VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"Front","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -8955,14 +8955,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"Front","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"Front","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"Front","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"Front","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -9058,7 +9058,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = this.$shouldDiffData === false ? data : diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"Front","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"Front","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -9668,9 +9668,13 @@ var _http = _interopRequireDefault(__webpack_require__(/*! ./http */ 41));
 var itemUrl = _http.default.urlPrefix + "/item";
 var itemApi = {
   getNewOrHotItems: function getNewOrHotItems(kind, current) {
-    // return request.http(`${itemUrl+"/newOrHot"}`,'GET',{kind:kind,current:current});
-    return _http.default.http('http://172.21.176.1:10393/mock/4817aa85-a9cc-4153-b774-98cccfa1ffee/itemShow/item/newOrHot?apipost_id=305579', 'GET');
+    return _http.default.http("".concat(itemUrl + "/newOrHot"), 'GET', {
+      kind: kind,
+      current: current
+    });
+    // return request.http('http://172.25.96.1:10393/mock/4817aa85-a9cc-4153-b774-98cccfa1ffee/itemShow/item/newOrHot?apipost_id=305579','GET');
   },
+
   getTeamItems: function getTeamItems(id, current) {
     return _http.default.http("".concat(itemUrl + "/belongTeam"), 'GET', {
       id: id,
@@ -9717,12 +9721,17 @@ var http = function http(url) {
       },
       success: function success(res) {
         if (res.data.code === 200) {
+          console.log("成功：200，成功：200");
+          console.log(res.data);
           resolve(res);
         } else {
+          console.log("成功：200，失败");
+          console.log(res.data.msg);
           reject(res);
         }
       },
       fail: function fail(error) {
+        console.log("失败，失败" + error);
         reject(error);
       }
     });
@@ -10014,6 +10023,9 @@ var stringOpe = {
     } else {
       return -1;
     }
+  },
+  isUserItemTeamId: function isUserItemTeamId(id) {
+    return id.startsWith('user') || id.startsWith('item') || id.startsWith('team');
   }
 };
 var _default = stringOpe;
@@ -11138,6 +11150,122 @@ module.exports = JSON.parse("{\"uni-pagination.prevText\":\"上一页\",\"uni-pa
 /***/ (function(module) {
 
 module.exports = JSON.parse("{\"uni-pagination.prevText\":\"上一頁\",\"uni-pagination.nextText\":\"下一頁\",\"uni-pagination.piecePerPage\":\"條/頁\"}");
+
+/***/ }),
+/* 159 */,
+/* 160 */,
+/* 161 */,
+/* 162 */,
+/* 163 */,
+/* 164 */,
+/* 165 */,
+/* 166 */,
+/* 167 */,
+/* 168 */,
+/* 169 */,
+/* 170 */,
+/* 171 */
+/*!************************************************************************************!*\
+  !*** C:/Users/asus/Desktop/EngineerStack/CodeRecords/ItemShow/Front/api/search.js ***!
+  \************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ 4);
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _http = _interopRequireDefault(__webpack_require__(/*! ./http */ 41));
+var searchUrl = _http.default.urlPrefix + "/search";
+var searchApi = {
+  searchForShows: function searchForShows(input, current, kind) {
+    return _http.default.http("".concat(searchUrl), 'GET', {
+      input: input,
+      kind: kind,
+      current: current
+    });
+  }
+};
+var _default = searchApi;
+exports.default = _default;
+
+/***/ }),
+/* 172 */
+/*!**************************************************************************************!*\
+  !*** C:/Users/asus/Desktop/EngineerStack/CodeRecords/ItemShow/Front/common/popup.js ***!
+  \**************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+//title不要超过7个汉字
+var popup = {
+  showError: function showError(title) {
+    uni.showToast({
+      title: title,
+      duration: 1000,
+      icon: "error",
+      mask: true
+    });
+  },
+  showSuccess: function showSuccess(title) {
+    uni.showToast({
+      title: title,
+      icon: "success",
+      duration: 1000,
+      mask: true
+    });
+  },
+  showLoad: function showLoad(title) {
+    uni.showLoading({
+      title: title
+    });
+  },
+  hideLoad: function hideLoad() {
+    uni.hideLoading();
+  },
+  showConfirm: function showConfirm(title) {
+    var content = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
+    var confirmCallback = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : undefined;
+    uni.showModal({
+      title: title,
+      content: content,
+      showCancel: false,
+      success: function success() {
+        confirmCallback && confirmCallback();
+      }
+    });
+  },
+  showConfirmAndCancel: function showConfirmAndCancel(title) {
+    var content = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
+    var confirmCallback = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : undefined;
+    var cancelCallback = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : undefined;
+    uni.showModal({
+      title: title,
+      content: content,
+      success: function success(res) {
+        if (res.confirm) {
+          confirmCallback && confirmCallback();
+        } else if (res.cancel) {
+          cancelCallback && cancelCallback();
+        }
+      }
+    });
+  }
+};
+var _default = popup;
+exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ })
 ]]);

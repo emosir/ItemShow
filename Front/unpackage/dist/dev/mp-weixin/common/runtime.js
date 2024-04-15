@@ -105,11 +105,11 @@
 /******/
 /******/
 /******/ 		// mini-css-extract-plugin CSS loading
-/******/ 		var cssChunks = {"uni_modules/uni-search-bar/components/uni-search-bar/uni-search-bar":1,"uni_modules/uni-pagination/components/uni-pagination/uni-pagination":1,"uni_modules/uni-card/components/uni-card/uni-card":1,"uni_modules/uni-icons/components/uni-icons/uni-icons":1};
+/******/ 		var cssChunks = {"uni_modules/uni-search-bar/components/uni-search-bar/uni-search-bar":1,"uni_modules/uni-segmented-control/components/uni-segmented-control/uni-segmented-control":1,"uni_modules/uni-pagination/components/uni-pagination/uni-pagination":1,"uni_modules/uni-card/components/uni-card/uni-card":1,"uni_modules/uni-icons/components/uni-icons/uni-icons":1};
 /******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {
-/******/ 				var href = "" + ({"component/overview":"component/overview","uni_modules/uni-search-bar/components/uni-search-bar/uni-search-bar":"uni_modules/uni-search-bar/components/uni-search-bar/uni-search-bar","uni_modules/uni-pagination/components/uni-pagination/uni-pagination":"uni_modules/uni-pagination/components/uni-pagination/uni-pagination","uni_modules/uni-card/components/uni-card/uni-card":"uni_modules/uni-card/components/uni-card/uni-card","uni_modules/uni-icons/components/uni-icons/uni-icons":"uni_modules/uni-icons/components/uni-icons/uni-icons"}[chunkId]||chunkId) + ".wxss";
+/******/ 				var href = "" + ({"component/overview":"component/overview","component/searchBar":"component/searchBar","uni_modules/uni-search-bar/components/uni-search-bar/uni-search-bar":"uni_modules/uni-search-bar/components/uni-search-bar/uni-search-bar","uni_modules/uni-segmented-control/components/uni-segmented-control/uni-segmented-control":"uni_modules/uni-segmented-control/components/uni-segmented-control/uni-segmented-control","uni_modules/uni-pagination/components/uni-pagination/uni-pagination":"uni_modules/uni-pagination/components/uni-pagination/uni-pagination","uni_modules/uni-card/components/uni-card/uni-card":"uni_modules/uni-card/components/uni-card/uni-card","uni_modules/uni-icons/components/uni-icons/uni-icons":"uni_modules/uni-icons/components/uni-icons/uni-icons"}[chunkId]||chunkId) + ".wxss";
 /******/ 				var fullhref = __webpack_require__.p + href;
 /******/ 				var existingLinkTags = document.getElementsByTagName("link");
 /******/ 				for(var i = 0; i < existingLinkTags.length; i++) {

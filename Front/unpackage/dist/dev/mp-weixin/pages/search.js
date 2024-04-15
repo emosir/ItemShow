@@ -96,6 +96,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "recyclableRender", function() { return recyclableRender; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
 var components
+try {
+  components = {
+    uniSearchBar: function () {
+      return Promise.all(/*! import() | uni_modules/uni-search-bar/components/uni-search-bar/uni-search-bar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-search-bar/components/uni-search-bar/uni-search-bar")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-search-bar/components/uni-search-bar/uni-search-bar.vue */ 116))
+    },
+    uniSegmentedControl: function () {
+      return __webpack_require__.e(/*! import() | uni_modules/uni-segmented-control/components/uni-segmented-control/uni-segmented-control */ "uni_modules/uni-segmented-control/components/uni-segmented-control/uni-segmented-control").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-segmented-control/components/uni-segmented-control/uni-segmented-control.vue */ 173))
+    },
+  }
+} catch (e) {
+  if (
+    e.message.indexOf("Cannot find module") !== -1 &&
+    e.message.indexOf(".vue") !== -1
+  ) {
+    console.error(e.message)
+    console.error("1. 排查组件名称拼写是否正确")
+    console.error(
+      "2. 排查组件是否符合 easycom 规范，文档：https://uniapp.dcloud.net.cn/collocation/pages?id=easycom"
+    )
+    console.error(
+      "3. 若组件不符合 easycom 规范，需手动引入，并在 components 中注册该组件"
+    )
+  } else {
+    throw e
+  }
+}
 var render = function () {
   var _vm = this
   var _h = _vm.$createElement
@@ -135,12 +161,196 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 
 
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ 4);
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+var _search = _interopRequireDefault(__webpack_require__(/*! ../api/search */ 171));
+var _stringOpe = _interopRequireDefault(__webpack_require__(/*! ../common/stringOpe */ 132));
+var _popup = _interopRequireDefault(__webpack_require__(/*! ../common/popup */ 172));
+var _showsOpe = _interopRequireDefault(__webpack_require__(/*! ../common/showsOpe */ 42));
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var Overview = function Overview() {
+  Promise.all(/*! require.ensure | component/overview */[__webpack_require__.e("common/vendor"), __webpack_require__.e("component/overview")]).then((function () {
+    return resolve(__webpack_require__(/*! ../component/overview.vue */ 127));
+  }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
+};
 var _default = {
-  name: "search"
+  name: "search",
+  components: {
+    Overview: Overview
+  },
+  data: function data() {
+    return {
+      input: "",
+      total: {
+        itemTotal: 1,
+        teamTotal: 1,
+        userTotal: 1
+      },
+      pageSize: 5,
+      items: [],
+      teams: [],
+      users: [],
+      segments: ['项目', '用户', '团队'],
+      segmentsCurrent: 0
+    };
+  },
+  onLoad: function onLoad(option) {
+    this.input = option.input;
+    this.search(this.input);
+  },
+  methods: {
+    search: function search(input) {
+      var _this = this;
+      if (_stringOpe.default.isUserItemTeamId(input)) {
+        _search.default.searchForShows(input).then(function (res) {
+          if (res.data.code === 200) {
+            _this.setRes(res);
+          } else {
+            _popup.default.showError(res.data.msg);
+          }
+        }).catch(function (err) {
+          _popup.default.showError("系统开小差啦~");
+        });
+      } else {
+        _search.default.searchForShows(input, 1, 0).then(function (res) {
+          if (res.data.code === 200) {
+            _this.setRes(res);
+          } else {
+            _popup.default.showError(res.data.msg);
+          }
+        }).catch(function (err) {
+          _popup.default.showError("系统开小差啦~");
+        });
+        _search.default.searchForShows(input, 1, 1).then(function (res) {
+          if (res.data.code === 200) {
+            _this.setRes(res);
+          } else {
+            _popup.default.showError(res.data.msg);
+          }
+        }).catch(function (err) {
+          _popup.default.showError("系统开小差啦~");
+        });
+        _search.default.searchForShows(input, 1, 2).then(function (res) {
+          if (res.data.code === 200) {
+            _this.setRes(res);
+          } else {
+            _popup.default.showError(res.data.msg);
+          }
+        }).catch(function (err) {
+          _popup.default.showError("系统开小差啦~");
+        });
+      }
+    },
+    setRes: function setRes(res) {
+      switch (_stringOpe.default.checkId(res.data.data.shows[0].id)) {
+        case 0:
+          {
+            this.users = res.data.data.shows;
+            this.pageSize = res.data.data.pageSize;
+            this.total.userTotal = res.data.data.total;
+            break;
+          }
+        case 1:
+          {
+            this.items = res.data.data.shows;
+            this.pageSize = res.data.data.pageSize;
+            this.total.itemTotal = res.data.data.total;
+            break;
+          }
+        case 2:
+          {
+            this.teams = res.data.data.shows;
+            this.pageSize = res.data.data.pageSize;
+            this.total.teamTotal = res.data.data.total;
+            break;
+          }
+      }
+    },
+    onClickSegment: function onClickSegment(e) {
+      if (this.segmentsCurrent !== e.currentIndex) {
+        this.segmentsCurrent = e.currentIndex;
+      }
+    },
+    getShows: function getShows(current) {
+      var _this2 = this;
+      switch (this.segmentsCurrent) {
+        case 0:
+          {
+            _search.default.searchForShows(this.input, current, 1).then(function (res) {
+              if (res.data.code === 200) {
+                _this2.setRes(res);
+                _showsOpe.default.getHeadImages(res.data.data.shows).then(function (shows) {
+                  _this2.items = shows;
+                }).catch(function (err) {
+                  console.log(err);
+                });
+              } else {
+                _popup.default.showError(res.data.msg);
+              }
+            }).catch(function (err) {
+              _popup.default.showError("系统开小差啦~");
+            });
+            break;
+          }
+        case 1:
+          {
+            _search.default.searchForShows(this.input, current, 0).then(function (res) {
+              if (res.data.code === 200) {
+                _this2.setRes(res);
+                _showsOpe.default.getHeadImages(res.data.data.shows).then(function (shows) {
+                  _this2.users = shows;
+                }).catch(function (err) {
+                  console.log(err);
+                });
+              } else {
+                _popup.default.showError(res.data.msg);
+              }
+            }).catch(function (err) {
+              _popup.default.showError("系统开小差啦~");
+            });
+            break;
+          }
+        case 2:
+          {
+            _search.default.searchForShows(this.input, current, 2).then(function (res) {
+              if (res.data.code === 200) {
+                _this2.setRes(res);
+                _showsOpe.default.getHeadImages(res.data.data.shows).then(function (shows) {
+                  _this2.teams = shows;
+                }).catch(function (err) {
+                  console.log(err);
+                });
+              } else {
+                _popup.default.showError(res.data.msg);
+              }
+            }).catch(function (err) {
+              _popup.default.showError("系统开小差啦~");
+            });
+            break;
+          }
+      }
+    }
+  }
 };
 exports.default = _default;
 

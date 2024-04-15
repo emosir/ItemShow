@@ -11,8 +11,10 @@ const stringOpe = {
         } else {
             return -1;
         }
+    },
+    isUserItemTeamId:(id)=>{
+        return id.startsWith('user')||id.startsWith('item')||id.startsWith('team');
     }
-
 }
 
 

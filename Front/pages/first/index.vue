@@ -1,9 +1,6 @@
 <template>
   <view>
-    <view>
-      <text>{{platStatic.platName}}</text>
-      <uni-search-bar @confirm="gotoSearch" :focus="true" v-model="input" placeholder="搜索..."></uni-search-bar>
-    </view>
+    <search-bar></search-bar>
     <view>
       <text @tap="changeShows">{{displayInfo}}</text>
       <template>
@@ -14,17 +11,14 @@
 </template>
 
 <script>
-	import platStatic from "../../common/platStatic";
   import itemApi from "../../api/item";
   import Overview from "../../component/overview.vue";
   import showsOpe from "../../common/showsOpe";
+  import SearchBar from "../../component/searchBar.vue";
 
   export default {
-    components: {Overview},
+    components: {SearchBar, Overview},
     computed: {
-      platStatic() {
-        return platStatic
-      },
       displayItems() {
         return this.flag ? this.hotItems : this.newItems;
       },
@@ -34,7 +28,6 @@
     },
 		data() {
 			return {
-        input:"",
         hotItems:[],
         newItems:[],
         flag:true,//true显示hot否则显示new
@@ -46,24 +39,17 @@
       this.getShows(1)
 		},
 		methods: {
-      gotoSearch(){
-        uni.navigateTo({
-          url: `/pages/search?input=${encodeURIComponent(JSON.stringify(this.input))}`
-        });
-      },
+      //分页获取项目、同时获取图片，
       getShows(current){
         let kind=this.flag?0:1
         itemApi.getNewOrHotItems(kind,current).then(res=>{
-          this.pageSize=res.data.pageSize
-          this.total=res.data.total
+          this.pageSize=res.data.data.pageSize
+          this.total=res.data.data.total
           if(this.flag)
-            this.hotItems=res.data.items
+            this.hotItems=res.data.data.items
           else
-            this.newItems=res.data.items
-          console.log(this.hotItems)
-          console.log(this.newItems)
-          console.log(1)
-          showsOpe.getHeadImages(res.data.items).then(shows=>{
+            this.newItems=res.data.data.items
+          showsOpe.getHeadImages(res.data.data.items).then(shows=>{
             if(this.flag)
               this.hotItems=shows
             else
@@ -75,6 +61,7 @@
           console.log(err)
         })
       },
+      //更改要展示的数据，同时获取目标数据的第一页数据
       changeShows(){
         this.flag=!this.flag
         this.pageSize=5

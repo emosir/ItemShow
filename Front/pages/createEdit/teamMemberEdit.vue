@@ -1,6 +1,8 @@
 <script>
 export default {
-  name: "teamMemberEdit"
+  name: "teamMemberEdit",
+  methods:{
+  }
 }
 </script>
 
