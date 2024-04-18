@@ -15,9 +15,9 @@
   import Overview from "../../component/overview.vue";
   import showsOpe from "../../common/showsOpe";
   import SearchBar from "../../component/searchBar.vue";
-
+  import imageUpload from "../../component/upload/imageUpload.vue";
   export default {
-    components: {SearchBar, Overview},
+    components: { imageUpload,SearchBar, Overview},
     computed: {
       displayItems() {
         return this.flag ? this.hotItems : this.newItems;

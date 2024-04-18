@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "member-list": "/component/team/memberList"
+  }
+}

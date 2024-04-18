@@ -3,10 +3,10 @@ import request from './http';
 const fileUrl=request.urlPrefix+"/file"
 
 const fileApi = {
-    upload: (id,filePath) => {
+    upload: (id,filePath,info) => {
         return new Promise((resolve, reject)=>{
             uni.uploadFile({
-                url: `${fileUrl}?id=` + id,
+                url: `${fileUrl}?id=` + id+`&info=`+info,
                 filePath: filePath,
                 name: "file",
                 success: (res) => {

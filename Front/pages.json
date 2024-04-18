@@ -1,53 +1,79 @@
 {
-	"pages": [{
-		"path": "pages/first/index"
-	},{
-		"path": "pages/first/workbenchEntrance"
-	},{
-		"path": "pages/first/user"
-	},{
-		"path": "pages/createEdit/itemCreateEdit"
-	},{
-		"path": "pages/createEdit/teamCreateEdit"
-	},{
-		"path": "pages/createEdit/userEdit"
-	},{
-		"path": "pages/show/itemShow"
-	},{
-		"path": "pages/show/teamMemberShow"
-	},{
-		"path": "pages/show/teamShow"
-	},{
-		"path": "pages/show/userShow"
-	},{
-		"path": "pages/workbench/workbenchMember"
-	},{
-		"path": "pages/workbench/workbenchLeader"
-	},{
-		"path": "pages/search"
-	}],
-	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
-	},
-	"tabBar": {
-		"color": "#7A7E83",
-		"selectedColor": "#3cc51f",
-		"borderStyle": "black",
-		"backgroundColor": "#ffffff",
-		"list": [{
-			"pagePath": "pages/first/index",
-			"text": "首页"
-		},{
-			"pagePath": "pages/first/workbenchEntrance",
-			"text": "团队"
-		},{
-			"pagePath": "pages/first/user",
-			"text": "我"
-		}
-		]
-	},
-	"uniIdRouter": {}
+  "pages": [
+    {
+      "path": "pages/createEdit/teamMemberEdit"
+    },
+    {
+      "path": "pages/first/index"
+    },
+    {
+      "path": "pages/first/workbenchEntrance"
+    },
+    {
+      "path": "pages/first/user"
+    },
+    {
+      "path": "pages/createEdit/itemCreateEdit"
+    },
+    {
+      "path": "pages/createEdit/teamCreateEdit"
+    },
+    {
+      "path": "pages/createEdit/userEdit"
+    },
+    {
+      "path": "pages/show/itemShow"
+    },
+    {
+      "path": "pages/show/teamMemberShow"
+    },
+    {
+      "path": "pages/show/teamShow"
+    },
+    {
+      "path": "pages/show/userShow"
+    },
+    {
+      "path": "pages/workbench/workbenchMember"
+    },
+    {
+      "path": "pages/workbench/workbenchLeader"
+    },
+    {
+      "path": "pages/search"
+    },
+    {
+      "path": "pages/eventAndMessage/userEventList"
+    },
+    {
+      "path": "pages/eventAndMessage/userMessageList"
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/first/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/first/workbenchEntrance",
+        "text": "团队"
+      },
+      {
+        "pagePath": "pages/first/user",
+        "text": "我"
+      }
+    ]
+  },
+  "uniIdRouter": {}
 }

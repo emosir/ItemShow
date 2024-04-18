@@ -33,7 +33,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _user_vue_vue_type_template_id_daac47fa_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./user.vue?vue&type=template&id=daac47fa&scoped=true& */ 52);
 /* harmony import */ var _user_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./user.vue?vue&type=script&lang=js& */ 54);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _user_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _user_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _D_Tool_PRo_HBuilderX_3_98_2023112510_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/runtime/componentNormalizer.js */ 32);
+/* harmony import */ var _D_Tool_PRo_HBuilderX_3_98_2023112510_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/runtime/componentNormalizer.js */ 36);
 
 var renderjs
 
@@ -96,10 +96,50 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "recyclableRender", function() { return recyclableRender; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
 var components
+try {
+  components = {
+    uniIcons: function () {
+      return Promise.all(/*! import() | uni_modules/uni-icons/components/uni-icons/uni-icons */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-icons/components/uni-icons/uni-icons")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-icons/components/uni-icons/uni-icons.vue */ 150))
+    },
+    uniList: function () {
+      return __webpack_require__.e(/*! import() | uni_modules/uni-list/components/uni-list/uni-list */ "uni_modules/uni-list/components/uni-list/uni-list").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-list/components/uni-list/uni-list.vue */ 158))
+    },
+    uniListItem: function () {
+      return __webpack_require__.e(/*! import() | uni_modules/uni-list/components/uni-list-item/uni-list-item */ "uni_modules/uni-list/components/uni-list-item/uni-list-item").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-list/components/uni-list-item/uni-list-item.vue */ 165))
+    },
+  }
+} catch (e) {
+  if (
+    e.message.indexOf("Cannot find module") !== -1 &&
+    e.message.indexOf(".vue") !== -1
+  ) {
+    console.error(e.message)
+    console.error("1. 排查组件名称拼写是否正确")
+    console.error(
+      "2. 排查组件是否符合 easycom 规范，文档：https://uniapp.dcloud.net.cn/collocation/pages?id=easycom"
+    )
+    console.error(
+      "3. 若组件不符合 easycom 规范，需手动引入，并在 components 中注册该组件"
+    )
+  } else {
+    throw e
+  }
+}
 var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
+  var g0 = _vm.pendingEvents.toString()
+  var g1 = _vm.unReadMessages.toString()
+  _vm.$mp.data = Object.assign(
+    {},
+    {
+      $root: {
+        g0: g0,
+        g1: g1,
+      },
+    }
+  )
 }
 var recyclableRender = false
 var staticRenderFns = []
@@ -133,16 +173,96 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {
 
-
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ 4);
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+var _eventAngMessage = _interopRequireDefault(__webpack_require__(/*! ../../api/eventAngMessage */ 56));
+var SearchBar = function SearchBar() {
+  Promise.all(/*! require.ensure | component/searchBar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("component/searchBar")]).then((function () {
+    return resolve(__webpack_require__(/*! ../../component/searchBar.vue */ 137));
+  }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
+};
+var copyId = function copyId() {
+  __webpack_require__.e(/*! require.ensure | component/common/copyId */ "component/common/copyId").then((function () {
+    return resolve(__webpack_require__(/*! ../../component/common/copyId.vue */ 172));
+  }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
+};
+var UniList = function UniList() {
+  __webpack_require__.e(/*! require.ensure | uni_modules/uni-list/components/uni-list/uni-list */ "uni_modules/uni-list/components/uni-list/uni-list").then((function () {
+    return resolve(__webpack_require__(/*! ../../uni_modules/uni-list/components/uni-list/uni-list.vue */ 158));
+  }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
+};
+var UniListItem = function UniListItem() {
+  __webpack_require__.e(/*! require.ensure | uni_modules/uni-list/components/uni-list-item/uni-list-item */ "uni_modules/uni-list/components/uni-list-item/uni-list-item").then((function () {
+    return resolve(__webpack_require__(/*! ../../uni_modules/uni-list/components/uni-list-item/uni-list-item.vue */ 165));
+  }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
+};
 var _default = {
-  name: "user"
+  name: "user",
+  components: {
+    UniListItem: UniListItem,
+    UniList: UniList,
+    copyId: copyId,
+    SearchBar: SearchBar
+  },
+  computed: {
+    iconName: function iconName() {
+      return this.user.gender === 0 ? "left" : "right";
+    }
+  },
+  data: function data() {
+    return {
+      user: {},
+      unReadMessages: 0,
+      pendingEvents: 0,
+      messages: [],
+      events: []
+    };
+  },
+  onLoad: function onLoad() {
+    var _this = this;
+    this.user = getApp().globalData.user;
+    _eventAngMessage.default.getUserEventAndMessage(this.user.id).then(function (res) {
+      _this.setRes(res);
+    }).catch(function (err) {
+      console.log("获取用户待办事项和信息失败" + err);
+    });
+  },
+  methods: {
+    setRes: function setRes(res) {
+      this.unReadMessages = res.data.data.message.unReadCount;
+      this.messages = res.data.data.message.messages;
+      this.pendingEvents = res.data.data.event.pendingCount;
+      this.events = res.data.data.event.events;
+    },
+    gotoUserEventList: function gotoUserEventList() {
+      uni.navigateTo({
+        url: "/pages/eventAndMessage/userEventList?events=".concat(encodeURIComponent(JSON.stringify(this.events)))
+      });
+    },
+    gotoUserMessageList: function gotoUserMessageList() {
+      uni.navigateTo({
+        url: "/pages/eventAndMessage/userMessageList?messages=".concat(encodeURIComponent(JSON.stringify(this.messages)))
+      });
+    },
+    gotoUserEdit: function gotoUserEdit() {
+      uni.navigateTo({
+        url: "/pages/createEdit/userEdit.vue"
+      });
+    },
+    gotoUserShow: function gotoUserShow() {
+      uni.navigateTo({
+        url: "/pages/show/userShow.vue?user=".concat(encodeURIComponent(JSON.stringify(this.user)))
+      });
+    }
+  }
 };
 exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ })
 

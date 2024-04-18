@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/createEdit/teamMemberEdit",
     "pages/first/index",
     "pages/first/workbenchEntrance",
     "pages/first/user",
@@ -12,7 +13,9 @@
     "pages/show/userShow",
     "pages/workbench/workbenchMember",
     "pages/workbench/workbenchLeader",
-    "pages/search"
+    "pages/search",
+    "pages/eventAndMessage/userEventList",
+    "pages/eventAndMessage/userMessageList"
   ],
   "subPackages": [],
   "window": {

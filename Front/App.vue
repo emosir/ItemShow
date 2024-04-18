@@ -1,8 +1,27 @@
 <script>
-	export default {
+	import userApi from "./api/user";
+  import showsOpe from "./common/showsOpe";
+
+  export default {
+    globalData: {
+      user: {}
+    },
 		onLaunch: function() {
-			console.warn('当前组件仅支持 uni_modules 目录结构 ，请升级 HBuilderX 到 3.1.0 版本以上！')
-			console.log('App Launch')
+      uni.login({
+        provider: 'weixin',
+        success: (res) => {
+          userApi.login(res.code).then((res)=>{
+            this.globalData.user=res.data.data.user;
+            showsOpe.getHeadImages([this.globalData.user]).then(shows=>{
+              this.globalData.user=shows
+            }).catch(err=>{
+              console.log("获取用户头像失败"+err)
+            })
+          }).catch((err)=>{
+            console.log("登录失败"+err)
+          })
+        }
+      });
 		},
 		onShow: function() {
 			console.log('App Show')
