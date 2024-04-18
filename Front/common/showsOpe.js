@@ -10,7 +10,7 @@ const showsOpe = {
             let promise = new Promise((resolve, reject) => {
                 if(!show.imagePaths)
                     show.imagePaths=[]
-                fileApi.download().then(res=>{
+                fileApi.download(shows.imageIds[0]).then(res=>{
                     show.imagePaths[0]=res;
                 }).catch(error => {
                     reject(error);
@@ -21,8 +21,7 @@ const showsOpe = {
         return Promise.all(promises).then(() => {
             return shows;
         });
-    }
-
+    },
 }
 
 

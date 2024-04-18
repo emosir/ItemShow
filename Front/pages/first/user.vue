@@ -54,6 +54,8 @@ import copyId from "../../component/common/copyId.vue";
 import UniList from "../../uni_modules/uni-list/components/uni-list/uni-list.vue";
 import UniListItem from "../../uni_modules/uni-list/components/uni-list-item/uni-list-item.vue";
 import eventAndMessageUrlApi from "../../api/eventAngMessage";
+import fileApi from "../../api/file";
+import showsOpe from "../../common/showsOpe";
 
 export default {
   name: "user",
@@ -74,6 +76,12 @@ export default {
   },
   onLoad(){
     this.user=getApp().globalData.user
+    fileApi.download(this.user.fileId).then(res=>{
+      this.user.filePath = res || ""
+    }).catch(err=>{
+      console.log(err)
+    })
+    this.user=showsOpe.getHeadImages([this.user])
     eventAndMessageUrlApi.getUserEventAndMessage(this.user.id).then(res=>{
       this.setRes(res)
     }).catch(err=>{
@@ -99,7 +107,7 @@ export default {
     },
     gotoUserEdit(){
       uni.navigateTo({
-        url: `/pages/createEdit/userEdit.vue`
+        url: `/pages/createEdit/userEdit.vue?user=${encodeURIComponent(JSON.stringify(this.user))}`
       });
     },
     gotoUserShow(){

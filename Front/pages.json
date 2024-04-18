@@ -1,9 +1,6 @@
 {
   "pages": [
     {
-      "path": "pages/createEdit/teamMemberEdit"
-    },
-    {
       "path": "pages/first/index"
     },
     {
@@ -17,6 +14,9 @@
     },
     {
       "path": "pages/createEdit/teamCreateEdit"
+    },
+    {
+      "path": "pages/createEdit/teamMemberEdit"
     },
     {
       "path": "pages/createEdit/userEdit"

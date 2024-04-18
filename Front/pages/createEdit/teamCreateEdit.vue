@@ -69,7 +69,7 @@ export default {
         "imagePaths": this.newImages.length > 0 ? this.newImages : this.team.imagePaths
       };
       uni.navigateTo({
-        url: `/pages/show/teamShow?team=${encodeURIComponent(JSON.stringify(temp))}`
+        url: `/pages/show/teamShow?show=${encodeURIComponent(JSON.stringify(temp))}`
       });
     },
     submit() {
@@ -105,6 +105,7 @@ export default {
           popup.hideLoad();
           if (allSuccessful) {
             popup.showSuccess("上传成功！");
+            uni.navigateBack()
           } else {
             popup.showError("部分或全部上传失败，请重试！");
           }

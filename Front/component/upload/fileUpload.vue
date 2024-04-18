@@ -31,8 +31,8 @@ export default {
   },
   data() {
     return {
-      oldFile: "",
-      newFile: ""
+      oldFile: {},
+      newFile: {}
     }
   },
   onLoad(option) {
