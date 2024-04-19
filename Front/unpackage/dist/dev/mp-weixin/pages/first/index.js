@@ -154,10 +154,9 @@ var _showsOpe = _interopRequireDefault(__webpack_require__(/*! ../../common/show
 //
 //
 //
-//
 var Overview = function Overview() {
-  Promise.all(/*! require.ensure | component/overview */[__webpack_require__.e("common/vendor"), __webpack_require__.e("component/overview")]).then((function () {
-    return resolve(__webpack_require__(/*! ../../component/overview.vue */ 140));
+  Promise.all(/*! require.ensure | component/overview/overview */[__webpack_require__.e("common/vendor"), __webpack_require__.e("component/overview/overview")]).then((function () {
+    return resolve(__webpack_require__(/*! ../../component/overview/overview.vue */ 140));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var SearchBar = function SearchBar() {

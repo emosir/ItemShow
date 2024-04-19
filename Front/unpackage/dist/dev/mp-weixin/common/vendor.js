@@ -5831,33 +5831,6 @@ module.exports = _classCallCheck, module.exports.__esModule = true, module.expor
 
 /***/ }),
 
-/***/ 239:
-/*!*****************************************************************************************************************************************!*\
-  !*** C:/Users/asus/Desktop/EngineerStack/CodeRecords/ItemShow/Front/uni_modules/uni-search-bar/components/uni-search-bar/i18n/index.js ***!
-  \*****************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ 4);
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 240));
-var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 241));
-var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 242));
-var _default = {
-  en: _en.default,
-  'zh-Hans': _zhHans.default,
-  'zh-Hant': _zhHant.default
-};
-exports.default = _default;
-
-/***/ }),
-
 /***/ 24:
 /*!************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/createClass.js ***!
@@ -5884,39 +5857,6 @@ function _createClass(Constructor, protoProps, staticProps) {
   return Constructor;
 }
 module.exports = _createClass, module.exports.__esModule = true, module.exports["default"] = module.exports;
-
-/***/ }),
-
-/***/ 240:
-/*!****************************************************************************************************************************************!*\
-  !*** C:/Users/asus/Desktop/EngineerStack/CodeRecords/ItemShow/Front/uni_modules/uni-search-bar/components/uni-search-bar/i18n/en.json ***!
-  \****************************************************************************************************************************************/
-/*! exports provided: uni-search-bar.cancel, uni-search-bar.placeholder, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("{\"uni-search-bar.cancel\":\"cancel\",\"uni-search-bar.placeholder\":\"Search enter content\"}");
-
-/***/ }),
-
-/***/ 241:
-/*!*********************************************************************************************************************************************!*\
-  !*** C:/Users/asus/Desktop/EngineerStack/CodeRecords/ItemShow/Front/uni_modules/uni-search-bar/components/uni-search-bar/i18n/zh-Hans.json ***!
-  \*********************************************************************************************************************************************/
-/*! exports provided: uni-search-bar.cancel, uni-search-bar.placeholder, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("{\"uni-search-bar.cancel\":\"cancel\",\"uni-search-bar.placeholder\":\"请输入搜索内容\"}");
-
-/***/ }),
-
-/***/ 242:
-/*!*********************************************************************************************************************************************!*\
-  !*** C:/Users/asus/Desktop/EngineerStack/CodeRecords/ItemShow/Front/uni_modules/uni-search-bar/components/uni-search-bar/i18n/zh-Hant.json ***!
-  \*********************************************************************************************************************************************/
-/*! exports provided: uni-search-bar.cancel, uni-search-bar.placeholder, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("{\"uni-search-bar.cancel\":\"cancel\",\"uni-search-bar.placeholder\":\"請輸入搜索內容\"}");
 
 /***/ }),
 
@@ -12002,9 +11942,9 @@ internalMixin(Vue);
 
 /***/ }),
 
-/***/ 257:
+/***/ 253:
 /*!*****************************************************************************************************************************************!*\
-  !*** C:/Users/asus/Desktop/EngineerStack/CodeRecords/ItemShow/Front/uni_modules/uni-pagination/components/uni-pagination/i18n/index.js ***!
+  !*** C:/Users/asus/Desktop/EngineerStack/CodeRecords/ItemShow/Front/uni_modules/uni-search-bar/components/uni-search-bar/i18n/index.js ***!
   \*****************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -12017,15 +11957,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 258));
-var _es = _interopRequireDefault(__webpack_require__(/*! ./es.json */ 259));
-var _fr = _interopRequireDefault(__webpack_require__(/*! ./fr.json */ 260));
-var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 261));
-var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 262));
+var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 254));
+var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 255));
+var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 256));
 var _default = {
   en: _en.default,
-  es: _es.default,
-  fr: _fr.default,
   'zh-Hans': _zhHans.default,
   'zh-Hant': _zhHant.default
 };
@@ -12033,25 +11969,36 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ 258:
+/***/ 254:
 /*!****************************************************************************************************************************************!*\
-  !*** C:/Users/asus/Desktop/EngineerStack/CodeRecords/ItemShow/Front/uni_modules/uni-pagination/components/uni-pagination/i18n/en.json ***!
+  !*** C:/Users/asus/Desktop/EngineerStack/CodeRecords/ItemShow/Front/uni_modules/uni-search-bar/components/uni-search-bar/i18n/en.json ***!
   \****************************************************************************************************************************************/
-/*! exports provided: uni-pagination.prevText, uni-pagination.nextText, uni-pagination.piecePerPage, default */
+/*! exports provided: uni-search-bar.cancel, uni-search-bar.placeholder, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"uni-pagination.prevText\":\"prev\",\"uni-pagination.nextText\":\"next\",\"uni-pagination.piecePerPage\":\"piece/page\"}");
+module.exports = JSON.parse("{\"uni-search-bar.cancel\":\"cancel\",\"uni-search-bar.placeholder\":\"Search enter content\"}");
 
 /***/ }),
 
-/***/ 259:
-/*!****************************************************************************************************************************************!*\
-  !*** C:/Users/asus/Desktop/EngineerStack/CodeRecords/ItemShow/Front/uni_modules/uni-pagination/components/uni-pagination/i18n/es.json ***!
-  \****************************************************************************************************************************************/
-/*! exports provided: uni-pagination.prevText, uni-pagination.nextText, uni-pagination.piecePerPage, default */
+/***/ 255:
+/*!*********************************************************************************************************************************************!*\
+  !*** C:/Users/asus/Desktop/EngineerStack/CodeRecords/ItemShow/Front/uni_modules/uni-search-bar/components/uni-search-bar/i18n/zh-Hans.json ***!
+  \*********************************************************************************************************************************************/
+/*! exports provided: uni-search-bar.cancel, uni-search-bar.placeholder, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"uni-pagination.prevText\":\"anterior\",\"uni-pagination.nextText\":\"prxima\",\"uni-pagination.piecePerPage\":\"Art��culo/P��gina\"}");
+module.exports = JSON.parse("{\"uni-search-bar.cancel\":\"cancel\",\"uni-search-bar.placeholder\":\"请输入搜索内容\"}");
+
+/***/ }),
+
+/***/ 256:
+/*!*********************************************************************************************************************************************!*\
+  !*** C:/Users/asus/Desktop/EngineerStack/CodeRecords/ItemShow/Front/uni_modules/uni-search-bar/components/uni-search-bar/i18n/zh-Hant.json ***!
+  \*********************************************************************************************************************************************/
+/*! exports provided: uni-search-bar.cancel, uni-search-bar.placeholder, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"uni-search-bar.cancel\":\"cancel\",\"uni-search-bar.placeholder\":\"請輸入搜索內容\"}");
 
 /***/ }),
 
@@ -12066,7 +12013,60 @@ module.exports = JSON.parse("{\"uni-pagination.prevText\":\"anterior\",\"uni-pag
 
 /***/ }),
 
-/***/ 260:
+/***/ 264:
+/*!*****************************************************************************************************************************************!*\
+  !*** C:/Users/asus/Desktop/EngineerStack/CodeRecords/ItemShow/Front/uni_modules/uni-pagination/components/uni-pagination/i18n/index.js ***!
+  \*****************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ 4);
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 265));
+var _es = _interopRequireDefault(__webpack_require__(/*! ./es.json */ 266));
+var _fr = _interopRequireDefault(__webpack_require__(/*! ./fr.json */ 267));
+var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 268));
+var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 269));
+var _default = {
+  en: _en.default,
+  es: _es.default,
+  fr: _fr.default,
+  'zh-Hans': _zhHans.default,
+  'zh-Hant': _zhHant.default
+};
+exports.default = _default;
+
+/***/ }),
+
+/***/ 265:
+/*!****************************************************************************************************************************************!*\
+  !*** C:/Users/asus/Desktop/EngineerStack/CodeRecords/ItemShow/Front/uni_modules/uni-pagination/components/uni-pagination/i18n/en.json ***!
+  \****************************************************************************************************************************************/
+/*! exports provided: uni-pagination.prevText, uni-pagination.nextText, uni-pagination.piecePerPage, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"uni-pagination.prevText\":\"prev\",\"uni-pagination.nextText\":\"next\",\"uni-pagination.piecePerPage\":\"piece/page\"}");
+
+/***/ }),
+
+/***/ 266:
+/*!****************************************************************************************************************************************!*\
+  !*** C:/Users/asus/Desktop/EngineerStack/CodeRecords/ItemShow/Front/uni_modules/uni-pagination/components/uni-pagination/i18n/es.json ***!
+  \****************************************************************************************************************************************/
+/*! exports provided: uni-pagination.prevText, uni-pagination.nextText, uni-pagination.piecePerPage, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"uni-pagination.prevText\":\"anterior\",\"uni-pagination.nextText\":\"prxima\",\"uni-pagination.piecePerPage\":\"Art��culo/P��gina\"}");
+
+/***/ }),
+
+/***/ 267:
 /*!****************************************************************************************************************************************!*\
   !*** C:/Users/asus/Desktop/EngineerStack/CodeRecords/ItemShow/Front/uni_modules/uni-pagination/components/uni-pagination/i18n/fr.json ***!
   \****************************************************************************************************************************************/
@@ -12077,7 +12077,7 @@ module.exports = JSON.parse("{\"uni-pagination.prevText\":\"précédente\",\"uni
 
 /***/ }),
 
-/***/ 261:
+/***/ 268:
 /*!*********************************************************************************************************************************************!*\
   !*** C:/Users/asus/Desktop/EngineerStack/CodeRecords/ItemShow/Front/uni_modules/uni-pagination/components/uni-pagination/i18n/zh-Hans.json ***!
   \*********************************************************************************************************************************************/
@@ -12088,7 +12088,7 @@ module.exports = JSON.parse("{\"uni-pagination.prevText\":\"上一页\",\"uni-pa
 
 /***/ }),
 
-/***/ 262:
+/***/ 269:
 /*!*********************************************************************************************************************************************!*\
   !*** C:/Users/asus/Desktop/EngineerStack/CodeRecords/ItemShow/Front/uni_modules/uni-pagination/components/uni-pagination/i18n/zh-Hant.json ***!
   \*********************************************************************************************************************************************/

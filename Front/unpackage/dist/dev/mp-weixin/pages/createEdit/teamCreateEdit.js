@@ -213,15 +213,17 @@ var _default = {
   },
   onLoad: function onLoad(option) {
     var _this = this;
-    this.team = JSON.parse(decodeURIComponent(option.team));
-    _showsOpe.default.getRestImages(this.team).then(function (res) {
-      _this.team = res;
-    });
-    _file.default.download(this.team.fileId).then(function (res) {
-      _this.team.filePath = res;
-    }).catch(function (err) {
-      console.log(err);
-    });
+    if (option && option.team) {
+      this.team = JSON.parse(decodeURIComponent(option.team));
+      _showsOpe.default.getRestImages(this.team).then(function (res) {
+        _this.team = res;
+      });
+      _file.default.download(this.team.fileId).then(function (res) {
+        _this.team.filePath = res;
+      }).catch(function (err) {
+        console.log('下载文件失败:', err);
+      });
+    }
   },
   methods: {
     getNewFile: function getNewFile(file) {

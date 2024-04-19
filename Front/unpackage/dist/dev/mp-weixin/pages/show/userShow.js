@@ -99,7 +99,7 @@ var components
 try {
   components = {
     uniSegmentedControl: function () {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-segmented-control/components/uni-segmented-control/uni-segmented-control */ "uni_modules/uni-segmented-control/components/uni-segmented-control/uni-segmented-control").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-segmented-control/components/uni-segmented-control/uni-segmented-control.vue */ 245))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-segmented-control/components/uni-segmented-control/uni-segmented-control */ "uni_modules/uni-segmented-control/components/uni-segmented-control/uni-segmented-control").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-segmented-control/components/uni-segmented-control/uni-segmented-control.vue */ 241))
     },
   }
 } catch (e) {
@@ -166,12 +166,12 @@ exports.default = void 0;
 var _team = _interopRequireDefault(__webpack_require__(/*! ../../api/team */ 70));
 var LikesAndShares = function LikesAndShares() {
   __webpack_require__.e(/*! require.ensure | component/common/likesAndShares */ "component/common/likesAndShares").then((function () {
-    return resolve(__webpack_require__(/*! ../../component/common/likesAndShares.vue */ 286));
+    return resolve(__webpack_require__(/*! ../../component/common/likesAndShares.vue */ 234));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var Overview = function Overview() {
-  Promise.all(/*! require.ensure | component/overview */[__webpack_require__.e("common/vendor"), __webpack_require__.e("component/overview")]).then((function () {
-    return resolve(__webpack_require__(/*! ../../component/overview.vue */ 140));
+  Promise.all(/*! require.ensure | component/overview/overview */[__webpack_require__.e("common/vendor"), __webpack_require__.e("component/overview/overview")]).then((function () {
+    return resolve(__webpack_require__(/*! ../../component/overview/overview.vue */ 140));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {

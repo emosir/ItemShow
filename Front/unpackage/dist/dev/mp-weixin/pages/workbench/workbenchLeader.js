@@ -133,16 +133,105 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {
 
-
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ 4);
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+var _item = _interopRequireDefault(__webpack_require__(/*! ../../api/item */ 43));
+var _showsOpe = _interopRequireDefault(__webpack_require__(/*! ../../common/showsOpe */ 32));
+var _file = _interopRequireDefault(__webpack_require__(/*! ../../api/file */ 33));
+var LikesAndShares = function LikesAndShares() {
+  __webpack_require__.e(/*! require.ensure | component/common/likesAndShares */ "component/common/likesAndShares").then((function () {
+    return resolve(__webpack_require__(/*! ../../component/common/likesAndShares.vue */ 234));
+  }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
+};
+var Overview = function Overview() {
+  Promise.all(/*! require.ensure | component/overview/overview */[__webpack_require__.e("common/vendor"), __webpack_require__.e("component/overview/overview")]).then((function () {
+    return resolve(__webpack_require__(/*! ../../component/overview/overview.vue */ 140));
+  }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
+};
 var _default = {
-  name: "workbenchLeader"
+  name: "workbenchLeader",
+  components: {
+    Overview: Overview,
+    LikesAndShares: LikesAndShares
+  },
+  data: function data() {
+    return {
+      team: {},
+      teamItems: [],
+      pageSize: 5,
+      total: 1
+    };
+  },
+  onLoad: function onLoad(option) {
+    var _this = this;
+    this.team = JSON.parse(decodeURIComponent(option.team));
+    _showsOpe.default.getHeadImage([this.team]).then(function (res) {
+      _this.team = res[0];
+    });
+    _showsOpe.default.getRestImages([this.item]).then(function (res) {
+      _this.team = res[0];
+    });
+    _file.default.download(this.team.fileId).then(function (res) {
+      _this.team.filePath = res;
+    });
+    _item.default.getTeamItems(this.team.id, 1).then(function (res) {
+      _this.pageSize = res.data.data.pageSize;
+      _this.total = res.data.data.total;
+      _this.teamItems = res.data.data.items;
+      _showsOpe.default.getHeadImage(_this.teamItems).then(function (res) {
+        _this.teamItems = res;
+      });
+    }).catch(function (err) {
+      console.log(err);
+    });
+  },
+  methods: {
+    updateLikesAndShares: function updateLikesAndShares(data) {
+      this.item.likes = data.likes;
+      this.item.shares = data.shares;
+    },
+    getShows: function getShows(current) {
+      var _this2 = this;
+      _item.default.getTeamItems(this.team.id, 1).then(function (res) {
+        _this2.pageSize = res.data.data.pageSize;
+        _this2.total = res.data.data.total;
+        _this2.teamItems = res.data.data.items;
+        _showsOpe.default.getHeadImage(_this2.teamItems).then(function (res) {
+          _this2.teamItems = res;
+        });
+      }).catch(function (err) {
+        console.log(err);
+      });
+    },
+    gotoTeamMemberEdit: function gotoTeamMemberEdit() {
+      uni.navigateTo({
+        url: "/pages/createEdit/teamMemberEdit?team=".concat(encodeURIComponent(JSON.stringify(this.team)))
+      });
+    },
+    gotoTeamShow: function gotoTeamShow() {
+      uni.navigateTo({
+        url: "/pages/show/teamShow?show=".concat(encodeURIComponent(JSON.stringify(this.team)))
+      });
+    },
+    gotoTeamEdit: function gotoTeamEdit() {
+      uni.navigateTo({
+        url: "/pages/createEdit/teamCreateEdit?team=".concat(encodeURIComponent(JSON.stringify(this.team)))
+      });
+    },
+    createItem: function createItem() {
+      uni.navigateTo({
+        url: "/pages/createEdit/itemCreateEdit?team=".concat(encodeURIComponent(JSON.stringify(this.team)))
+      });
+    }
+  }
 };
 exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ })
 

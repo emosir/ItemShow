@@ -44,17 +44,20 @@ export default {
       newImages:[],
     };
   },
-  onLoad(option){
-    this.team=JSON.parse(decodeURIComponent(option.team))
-    showsOpe.getRestImages(this.team).then(res=>{
-      this.team=res
-    })
-    fileApi.download(this.team.fileId).then(res=>{
-      this.team.filePath=res
-    }).catch(err=>{
-      console.log(err)
-    })
-  },
+  onLoad(option) {
+    if (option && option.team) {
+      this.team = JSON.parse(decodeURIComponent(option.team));
+      showsOpe.getRestImages(this.team).then(res => {
+        this.team = res;
+      });
+      fileApi.download(this.team.fileId).then(res => {
+        this.team.filePath = res;
+      }).catch(err => {
+        console.log('下载文件失败:', err);
+      });
+    }
+  }
+,
   methods: {
     getNewFile(file){
       this.newFile=file;

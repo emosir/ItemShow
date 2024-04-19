@@ -1,7 +1,6 @@
 <template>
   <view>
     <search-bar></search-bar>
-    <carousel></carousel>
     <view>
       <text @tap="changeShows">{{displayInfo}}</text>
       <template>
@@ -13,7 +12,7 @@
 
 <script>
   import itemApi from "../../api/item";
-  import Overview from "../../component/overview.vue";
+  import Overview from "../../component/overview/overview.vue";
   import showsOpe from "../../common/showsOpe";
   import SearchBar from "../../component/searchBar.vue";
   import imageUpload from "../../component/upload/imageUpload.vue";

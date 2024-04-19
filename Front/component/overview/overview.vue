@@ -12,7 +12,7 @@
 
 
 <script>
-import stringOpe from "../common/stringOpe";
+import stringOpe from "../../common/stringOpe";
 
 export default {
   name: "overview",

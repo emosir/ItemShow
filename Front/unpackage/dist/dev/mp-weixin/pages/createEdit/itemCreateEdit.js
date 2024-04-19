@@ -208,20 +208,25 @@ var _default = {
       },
       item: {},
       newFile: {},
-      newImages: []
+      newImages: [],
+      team: {}
     };
   },
   onLoad: function onLoad(option) {
     var _this = this;
-    this.item = JSON.parse(decodeURIComponent(option.item));
-    _showsOpe.default.getRestImages(this.item).then(function (res) {
-      _this.item = res;
-    });
-    _file.default.download(this.item.fileId).then(function (res) {
-      _this.item.filePath = res;
-    }).catch(function (err) {
-      console.log(err);
-    });
+    if (option && option.item) {
+      this.item = JSON.parse(decodeURIComponent(option.item));
+      _showsOpe.default.getRestImages(this.item).then(function (res) {
+        _this.item = res;
+      });
+      _file.default.download(this.item.fileId).then(function (res) {
+        _this.item.filePath = res;
+      }).catch(function (err) {
+        console.log(err);
+      });
+    } else if (option && option.team) {
+      this.team = JSON.parse(decodeURIComponent(option.team));
+    }
   },
   methods: {
     getNewFile: function getNewFile(file) {

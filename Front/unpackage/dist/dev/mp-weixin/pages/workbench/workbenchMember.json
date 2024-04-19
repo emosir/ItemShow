@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "likes-and-shares": "/component/common/likesAndShares",
+    "carousel": "/component/common/Carousel"
+  }
 }

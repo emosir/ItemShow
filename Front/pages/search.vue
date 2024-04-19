@@ -20,7 +20,7 @@
 import searchApi from "../api/search";
 import stringOpe from "../common/stringOpe";
 import popup from "../common/popup";
-import Overview from "../component/overview.vue";
+import Overview from "../component/overview/overview.vue";
 import showsOpe from "../common/showsOpe";
 
 export default {

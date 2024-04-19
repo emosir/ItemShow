@@ -30,7 +30,7 @@
 <script>
 import LikesAndShares from "../../component/common/likesAndShares.vue";
 import teamApi from "../../api/team";
-import Overview from "../../component/overview.vue";
+import Overview from "../../component/overview/overview.vue";
 
 
 export default{

@@ -42,18 +42,23 @@ export default {
       item:{},
       newFile:{},
       newImages:[],
+      team:{}
     };
   },
   onLoad(option){
-    this.item=JSON.parse(decodeURIComponent(option.item))
-    showsOpe.getRestImages(this.item).then(res=>{
-      this.item=res
-    })
-    fileApi.download(this.item.fileId).then(res=>{
-      this.item.filePath=res
-    }).catch(err=>{
-      console.log(err)
-    })
+    if (option && option.item){
+      this.item=JSON.parse(decodeURIComponent(option.item))
+      showsOpe.getRestImages(this.item).then(res=>{
+        this.item=res
+      })
+      fileApi.download(this.item.fileId).then(res=>{
+        this.item.filePath=res
+      }).catch(err=>{
+        console.log(err)
+      })
+    }else if(option&&option.team){
+      this.team=JSON.parse(decodeURIComponent(option.team))
+    }
   },
   methods: {
     getNewFile(file){

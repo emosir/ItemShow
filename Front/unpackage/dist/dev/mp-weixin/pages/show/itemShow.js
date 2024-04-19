@@ -171,7 +171,7 @@ var Carousel = function Carousel() {
 };
 var LikesAndShares = function LikesAndShares() {
   __webpack_require__.e(/*! require.ensure | component/common/likesAndShares */ "component/common/likesAndShares").then((function () {
-    return resolve(__webpack_require__(/*! ../../component/common/likesAndShares.vue */ 286));
+    return resolve(__webpack_require__(/*! ../../component/common/likesAndShares.vue */ 234));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {
