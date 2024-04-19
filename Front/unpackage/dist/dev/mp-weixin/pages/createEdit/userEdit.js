@@ -99,13 +99,13 @@ var components
 try {
   components = {
     uniForms: function () {
-      return Promise.all(/*! import() | uni_modules/uni-forms/components/uni-forms/uni-forms */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-forms/components/uni-forms/uni-forms")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-forms/components/uni-forms/uni-forms.vue */ 140))
+      return Promise.all(/*! import() | uni_modules/uni-forms/components/uni-forms/uni-forms */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-forms/components/uni-forms/uni-forms")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-forms/components/uni-forms/uni-forms.vue */ 192))
     },
     uniFormsItem: function () {
-      return Promise.all(/*! import() | uni_modules/uni-forms/components/uni-forms-item/uni-forms-item */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-forms/components/uni-forms-item/uni-forms-item")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-forms/components/uni-forms-item/uni-forms-item.vue */ 156))
+      return Promise.all(/*! import() | uni_modules/uni-forms/components/uni-forms-item/uni-forms-item */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-forms/components/uni-forms-item/uni-forms-item")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-forms/components/uni-forms-item/uni-forms-item.vue */ 208))
     },
     uniEasyinput: function () {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput */ "uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput.vue */ 163))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput */ "uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput.vue */ 215))
     },
   }
 } catch (e) {
@@ -169,18 +169,19 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-var _popup = _interopRequireDefault(__webpack_require__(/*! ../../common/popup */ 70));
-var _item = _interopRequireDefault(__webpack_require__(/*! ../../api/item */ 50));
+var _popup = _interopRequireDefault(__webpack_require__(/*! ../../common/popup */ 63));
+var _item = _interopRequireDefault(__webpack_require__(/*! ../../api/item */ 43));
 var _file = _interopRequireDefault(__webpack_require__(/*! ../../api/file */ 33));
 var _user = _interopRequireDefault(__webpack_require__(/*! ../../api/user */ 30));
+var _showsOpe = _interopRequireDefault(__webpack_require__(/*! ../../common/showsOpe */ 32));
 var FileUpload = function FileUpload() {
   __webpack_require__.e(/*! require.ensure | component/upload/fileUpload */ "component/upload/fileUpload").then((function () {
-    return resolve(__webpack_require__(/*! ../../component/upload/fileUpload.vue */ 215));
+    return resolve(__webpack_require__(/*! ../../component/upload/fileUpload.vue */ 222));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var ImageUpload = function ImageUpload() {
   __webpack_require__.e(/*! require.ensure | component/upload/imageUpload */ "component/upload/imageUpload").then((function () {
-    return resolve(__webpack_require__(/*! ../../component/upload/imageUpload.vue */ 181));
+    return resolve(__webpack_require__(/*! ../../component/upload/imageUpload.vue */ 151));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {

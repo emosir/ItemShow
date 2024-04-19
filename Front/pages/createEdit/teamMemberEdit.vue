@@ -110,7 +110,7 @@ export default {
       this.positionFormData.position=this.vacantPositions.map(position => position.positionName).join('、');
       this.positionArray = this.vacantPositions.map(position => position.positionName);
       this.members=res.data.data.members
-      showsOpe.getHeadImages(this.members).then(res=>{
+      showsOpe.getHeadImage(this.members).then(res=>{
         this.members=res;
       })
     }).catch(err=>{
@@ -126,8 +126,12 @@ export default {
       })
     },
     searchUser(){
-      teamMemberApi.invite(this.userIdFormData.userId,this.team.id).then(res=>{
-        popup.showSuccess("邀请已发送")
+      teamMemberApi.searchBeforeInvite(this.userIdFormData.userId,this.team.id).then(res=>{
+        if(res.data.data.flag){
+          uni.navigateTo({
+            url: `/pages/eventAndMessage/InviteJoinTeam?recipient=`+this.userIdFormData.userId+`&sender=`+this.team.id
+          });
+        }
       }).catch(err=>{
         popup.showError(err.msg)
       })

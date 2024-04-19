@@ -99,10 +99,10 @@ var components
 try {
   components = {
     uniSearchBar: function () {
-      return Promise.all(/*! import() | uni_modules/uni-search-bar/components/uni-search-bar/uni-search-bar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-search-bar/components/uni-search-bar/uni-search-bar")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-search-bar/components/uni-search-bar/uni-search-bar.vue */ 220))
+      return Promise.all(/*! import() | uni_modules/uni-search-bar/components/uni-search-bar/uni-search-bar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-search-bar/components/uni-search-bar/uni-search-bar")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-search-bar/components/uni-search-bar/uni-search-bar.vue */ 234))
     },
     uniSegmentedControl: function () {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-segmented-control/components/uni-segmented-control/uni-segmented-control */ "uni_modules/uni-segmented-control/components/uni-segmented-control/uni-segmented-control").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-segmented-control/components/uni-segmented-control/uni-segmented-control.vue */ 231))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-segmented-control/components/uni-segmented-control/uni-segmented-control */ "uni_modules/uni-segmented-control/components/uni-segmented-control/uni-segmented-control").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-segmented-control/components/uni-segmented-control/uni-segmented-control.vue */ 245))
     },
   }
 } catch (e) {
@@ -168,7 +168,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var _search = _interopRequireDefault(__webpack_require__(/*! ../api/search */ 126));
 var _stringOpe = _interopRequireDefault(__webpack_require__(/*! ../common/stringOpe */ 127));
-var _popup = _interopRequireDefault(__webpack_require__(/*! ../common/popup */ 70));
+var _popup = _interopRequireDefault(__webpack_require__(/*! ../common/popup */ 63));
 var _showsOpe = _interopRequireDefault(__webpack_require__(/*! ../common/showsOpe */ 32));
 //
 //
@@ -190,7 +190,7 @@ var _showsOpe = _interopRequireDefault(__webpack_require__(/*! ../common/showsOp
 //
 var Overview = function Overview() {
   Promise.all(/*! require.ensure | component/overview */[__webpack_require__.e("common/vendor"), __webpack_require__.e("component/overview")]).then((function () {
-    return resolve(__webpack_require__(/*! ../component/overview.vue */ 170));
+    return resolve(__webpack_require__(/*! ../component/overview.vue */ 140));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {
@@ -299,7 +299,7 @@ var _default = {
             _search.default.searchForShows(this.input, current, 1).then(function (res) {
               if (res.data.code === 200) {
                 _this2.setRes(res);
-                _showsOpe.default.getHeadImages(res.data.data.shows).then(function (shows) {
+                _showsOpe.default.getHeadImage(res.data.data.shows).then(function (shows) {
                   _this2.items = shows;
                 }).catch(function (err) {
                   console.log(err);
@@ -317,7 +317,7 @@ var _default = {
             _search.default.searchForShows(this.input, current, 0).then(function (res) {
               if (res.data.code === 200) {
                 _this2.setRes(res);
-                _showsOpe.default.getHeadImages(res.data.data.shows).then(function (shows) {
+                _showsOpe.default.getHeadImage(res.data.data.shows).then(function (shows) {
                   _this2.users = shows;
                 }).catch(function (err) {
                   console.log(err);
@@ -335,7 +335,7 @@ var _default = {
             _search.default.searchForShows(this.input, current, 2).then(function (res) {
               if (res.data.code === 200) {
                 _this2.setRes(res);
-                _showsOpe.default.getHeadImages(res.data.data.shows).then(function (shows) {
+                _showsOpe.default.getHeadImage(res.data.data.shows).then(function (shows) {
                   _this2.teams = shows;
                 }).catch(function (err) {
                   console.log(err);

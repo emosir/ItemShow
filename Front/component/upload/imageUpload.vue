@@ -18,10 +18,9 @@
 
 <script>
 export default {
-  props:["maxImages"],
+  props:["maxImages","imageList"],
   data() {
     return {
-      imageList: [], // 存储选中的图片
       counter:0
     }
   },

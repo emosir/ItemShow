@@ -133,16 +133,121 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {
 
-
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ 4);
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+var _showsOpe = _interopRequireDefault(__webpack_require__(/*! ../../common/showsOpe */ 32));
+var _file = _interopRequireDefault(__webpack_require__(/*! ../../api/file */ 33));
+var _team = _interopRequireDefault(__webpack_require__(/*! ../../api/team */ 70));
+var _popup = _interopRequireDefault(__webpack_require__(/*! ../../common/popup */ 63));
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var Carousel = function Carousel() {
+  __webpack_require__.e(/*! require.ensure | component/common/Carousel */ "component/common/Carousel").then((function () {
+    return resolve(__webpack_require__(/*! ../../component/common/Carousel.vue */ 158));
+  }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
+};
+var LikesAndShares = function LikesAndShares() {
+  __webpack_require__.e(/*! require.ensure | component/common/likesAndShares */ "component/common/likesAndShares").then((function () {
+    return resolve(__webpack_require__(/*! ../../component/common/likesAndShares.vue */ 286));
+  }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
+};
 var _default = {
-  name: "itemShow"
+  name: "itemShow",
+  components: {
+    LikesAndShares: LikesAndShares,
+    Carousel: Carousel
+  },
+  data: function data() {
+    return {
+      user: {},
+      item: {},
+      isOwner: false
+    };
+  },
+  onLoad: function onLoad(option) {
+    var _this = this;
+    this.item = JSON.parse(decodeURIComponent(option.show));
+    _showsOpe.default.getRestImages(this.item).then(function (updatedShow) {
+      _this.item = updatedShow;
+    });
+    _file.default.download(this.item.fileId).then(function (res) {
+      _this.item.filePath = res;
+    }).catch(function (err) {
+      console.log("请求文件出错：" + err);
+    });
+    this.user = getApp().getLoadData().user;
+    this.isOwner = this.item.leaderId === this.user.id;
+  },
+  methods: {
+    updateLikesAndShares: function updateLikesAndShares(data) {
+      this.item.likes = data.likes;
+      this.item.shares = data.shares;
+    },
+    checkFile: function checkFile() {
+      uni.openDocument({
+        filePath: this.item.filePath
+      });
+    },
+    contactTeam: function contactTeam() {
+      uni.navigateTo({
+        url: "/pages/eventAndMessage/MessageSender?recipient=" + this.item.leaderId
+      });
+    },
+    gotoTeam: function gotoTeam() {
+      var temp;
+      _team.default.getTeamById(this.item.teamId).then(function (res) {
+        temp = res.data.data;
+      }).catch(function (err) {
+        _popup.default.showError(err.msg);
+      });
+      _showsOpe.default.getHeadImage([temp]).then(function (res) {
+        temp = res[0];
+      });
+      uni.navigateTo({
+        url: "/pages/show/teamShow?show=".concat(encodeURIComponent(JSON.stringify(temp)))
+      });
+    },
+    gotoEdit: function gotoEdit() {
+      var temp;
+      _team.default.getTeamById(this.item.teamId).then(function (res) {
+        temp = res.data.data;
+      }).catch(function (err) {
+        _popup.default.showError(err.msg);
+      });
+      _showsOpe.default.getHeadImage([temp]).then(function (res) {
+        temp = res[0];
+      });
+      uni.navigateTo({
+        url: "/pages/createEdit/teamCreateEdit?team=".concat(encodeURIComponent(JSON.stringify(temp)))
+      });
+    }
+  }
 };
 exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ })
 

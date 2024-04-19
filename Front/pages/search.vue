@@ -121,7 +121,7 @@ export default {
           searchApi.searchForShows(this.input,current,1).then(res=>{
             if(res.data.code===200){
               this.setRes(res)
-              showsOpe.getHeadImages(res.data.data.shows).then(shows=>{
+              showsOpe.getHeadImage(res.data.data.shows).then(shows=>{
                 this.items=shows
               }).catch(err=>{
                 console.log(err)
@@ -138,7 +138,7 @@ export default {
           searchApi.searchForShows(this.input,current,0).then(res=>{
             if(res.data.code===200){
               this.setRes(res)
-              showsOpe.getHeadImages(res.data.data.shows).then(shows=>{
+              showsOpe.getHeadImage(res.data.data.shows).then(shows=>{
                 this.users=shows
               }).catch(err=>{
                 console.log(err)
@@ -155,7 +155,7 @@ export default {
           searchApi.searchForShows(this.input,current,2).then(res=>{
             if(res.data.code===200){
               this.setRes(res)
-              showsOpe.getHeadImages(res.data.data.shows).then(shows=>{
+              showsOpe.getHeadImage(res.data.data.shows).then(shows=>{
                 this.teams=shows
               }).catch(err=>{
                 console.log(err)

@@ -7,7 +7,7 @@
     <view>
       <uni-icons type="search" size="30"></uni-icons>
       <view v-if="isOldFile">
-        <text @tap="openFile(oldFile.path)">已上传：{{oldFile.name}}</text>
+        <text @tap="openFile(oldFilePath)">查看已上传文件</text>
       </view>
       <view v-if="isNewFile">
         <text @tap="openFile(newFile.path)">未上传：{{newFile.name}}</text>
@@ -21,6 +21,7 @@ import popup from "../../common/popup";
 
 export default {
   name: "FileUpload",
+  props:["oldFilePath"],
   computed: {
     isOldFile() {
       return !!this.oldFile;
@@ -31,7 +32,6 @@ export default {
   },
   data() {
     return {
-      oldFile: {},
       newFile: {}
     }
   },

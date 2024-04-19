@@ -24,16 +24,103 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {
 
-
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ 4);
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+var _showsOpe = _interopRequireDefault(__webpack_require__(/*! ../../common/showsOpe */ 32));
+var _file = _interopRequireDefault(__webpack_require__(/*! ../../api/file */ 33));
+var _team = _interopRequireDefault(__webpack_require__(/*! ../../api/team */ 70));
+var _popup = _interopRequireDefault(__webpack_require__(/*! ../../common/popup */ 63));
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var Carousel = function Carousel() {
+  __webpack_require__.e(/*! require.ensure | component/common/Carousel */ "component/common/Carousel").then((function () {
+    return resolve(__webpack_require__(/*! ../../component/common/Carousel.vue */ 158));
+  }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
+};
+var LikesAndShares = function LikesAndShares() {
+  __webpack_require__.e(/*! require.ensure | component/common/likesAndShares */ "component/common/likesAndShares").then((function () {
+    return resolve(__webpack_require__(/*! ../../component/common/likesAndShares.vue */ 286));
+  }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
+};
 var _default = {
-  name: "teamShow"
+  name: "teamShow",
+  components: {
+    LikesAndShares: LikesAndShares,
+    Carousel: Carousel
+  },
+  data: function data() {
+    return {
+      user: {},
+      team: {},
+      isNotIn: true
+    };
+  },
+  onLoad: function onLoad(option) {
+    var _this = this;
+    this.team = JSON.parse(decodeURIComponent(option.show));
+    _showsOpe.default.getRestImages(this.team).then(function (updatedShow) {
+      _this.team = updatedShow;
+    });
+    _file.default.download(this.team.fileId).then(function (res) {
+      _this.team.filePath = res;
+    }).catch(function (err) {
+      console.log("请求文件出错：" + err);
+    });
+    this.user = getApp().getLoadData().user;
+    this.isNotIn = !this.team.memberIds.include(this.user.id);
+  },
+  methods: {
+    updateLikesAndShares: function updateLikesAndShares(data) {
+      this.team.likes = data.likes;
+      this.team.shares = data.shares;
+    },
+    checkFile: function checkFile() {
+      uni.openDocument({
+        filePath: this.team.filePath
+      });
+    },
+    contactTeam: function contactTeam() {
+      uni.navigateTo({
+        url: "/pages/eventAndMessage/MessageSender?recipient=" + this.team.leaderId
+      });
+    },
+    gotoTeamMember: function gotoTeamMember() {
+      uni.navigateTo({
+        url: "/pages/show/teamMemberShow?team=".concat(encodeURIComponent(JSON.stringify(this.team)))
+      });
+    },
+    ApplyJoin: function ApplyJoin() {
+      uni.navigateTo({
+        url: "/pages/eventAndMessage/applyJoinTeam?recipient=" + this.team.id
+      });
+    }
+  }
 };
 exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
 

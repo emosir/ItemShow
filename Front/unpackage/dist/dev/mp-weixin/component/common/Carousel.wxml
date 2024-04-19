@@ -1,0 +1,1 @@
+<view class="content"><swiper class="swiper-box" indicator-dots="true" data-event-opts="{{[['change',[['change',['$event']]]]]}}" bindchange="__e"><block wx:for="{{imagePaths}}" wx:for-item="path" wx:for-index="index" wx:key="index"><swiper-item><image class="gallery-image" src="{{path}}"></image></swiper-item></block></swiper></view>

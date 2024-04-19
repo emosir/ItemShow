@@ -1,6 +1,7 @@
 <template>
   <view>
     <search-bar></search-bar>
+    <carousel></carousel>
     <view>
       <text @tap="changeShows">{{displayInfo}}</text>
       <template>
@@ -16,8 +17,9 @@
   import showsOpe from "../../common/showsOpe";
   import SearchBar from "../../component/searchBar.vue";
   import imageUpload from "../../component/upload/imageUpload.vue";
+  import Carousel from "../../component/common/Carousel.vue";
   export default {
-    components: { imageUpload,SearchBar, Overview},
+    components: {Carousel, imageUpload,SearchBar, Overview},
     computed: {
       displayItems() {
         return this.flag ? this.hotItems : this.newItems;
@@ -49,7 +51,7 @@
             this.hotItems=res.data.data.items
           else
             this.newItems=res.data.data.items
-          showsOpe.getHeadImages(res.data.data.items).then(shows=>{
+          showsOpe.getHeadImage(res.data.data.items).then(shows=>{
             if(this.flag)
               this.hotItems=shows
             else

@@ -1,1 +1,1 @@
-<view><text>{{"ID:"+showId}}</text><uni-icons vue-id="6cc931bc-1" type="paperplane" size="30" bind:__l="__l"></uni-icons></view>
+<view data-event-opts="{{[['tap',[['copyToClipboard',['$event']]]]]}}" bindtap="__e"><text>{{"ID:"+showId}}</text><uni-icons vue-id="6cc931bc-1" type="paperplane" size="30" bind:__l="__l"></uni-icons></view>

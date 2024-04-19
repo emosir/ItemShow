@@ -31,6 +31,7 @@ import popup from "../../common/popup";
 import itemApi from "../../api/item";
 import fileApi from "../../api/file";
 import userApi from "../../api/user";
+import showsOpe from "../../common/showsOpe";
 
 export default {
   name: "userEdit",

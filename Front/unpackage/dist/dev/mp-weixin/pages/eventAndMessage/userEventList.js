@@ -140,7 +140,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 var _default = {
-  name: "EventUserList"
+  name: "userEventList"
 };
 exports.default = _default;
 

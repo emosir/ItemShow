@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "uni-segmented-control": "/uni_modules/uni-segmented-control/components/uni-segmented-control/uni-segmented-control",
+    "overview": "/component/overview",
+    "likes-and-shares": "/component/common/likesAndShares"
+  }
 }

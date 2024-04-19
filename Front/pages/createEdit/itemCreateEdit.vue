@@ -8,8 +8,8 @@
         <uni-easyinput type="text" v-model="formData.description" placeholder="请输入项目简介"/>
       </uni-forms-item>
     </uni-forms>
-    <file-upload @newFile="getNewFile"></file-upload>
-    <image-upload :max-images="5" @newImages="getNewImages"></image-upload>
+    <file-upload @newFile="getNewFile" :old-file-path="item.filePath"></file-upload>
+    <image-upload :max-images="5" :image-list="item.imagePaths" @newImages="getNewImages"></image-upload>
     <button @click="preview">预览</button>
     <button @click="submit">提交</button>
   </view>
@@ -21,6 +21,7 @@ import popup from "../../common/popup";
 import fileApi from "../../api/file";
 import itemApi from "../../api/item";
 import ImageUpload from "../../component/upload/imageUpload.vue";
+import showsOpe from "../../common/showsOpe";
 
 export default {
   components: {ImageUpload, FileUpload},
@@ -45,6 +46,14 @@ export default {
   },
   onLoad(option){
     this.item=JSON.parse(decodeURIComponent(option.item))
+    showsOpe.getRestImages(this.item).then(res=>{
+      this.item=res
+    })
+    fileApi.download(this.item.fileId).then(res=>{
+      this.item.filePath=res
+    }).catch(err=>{
+      console.log(err)
+    })
   },
   methods: {
     getNewFile(file){

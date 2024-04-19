@@ -111,8 +111,8 @@ var _default = {
       success: function success(res) {
         _user.default.login(res.code).then(function (res) {
           _this.globalData.user = res.data.data.user;
-          _showsOpe.default.getHeadImages([_this.globalData.user]).then(function (shows) {
-            _this.globalData.user = shows;
+          _showsOpe.default.getHeadImage([_this.globalData.user]).then(function (shows) {
+            _this.globalData.user = shows[0];
           }).catch(function (err) {
             console.log("获取用户头像失败" + err);
           });

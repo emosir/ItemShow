@@ -34,12 +34,10 @@ export default {
         url: `/pages/show/${showType}?show=${encodeURIComponent(JSON.stringify(show))}`
       });
     },
-
     changePage(params) {
       this.current = params.current;
       this.$parent.getShows(this.current)
     }
-
   }
 }
 </script>

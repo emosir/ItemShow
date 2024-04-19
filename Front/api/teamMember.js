@@ -21,8 +21,8 @@ const teamMemberApi = {
     uploadPositionNumber:(id,positionNumber)=>{
         return request.http(`${teamMemberUrl}`+"/positionNumber",'POST',{id:id,positionNumber:positionNumber})
     },
-    invite:(userId,teamId)=>{
-        return request.http(`${teamMemberUrl}`+"/invite",'PATCH',{userId:userId,teamId:teamId})
+    searchBeforeInvite:(userId, teamId)=>{
+        return request.http(`${teamMemberUrl}`+"/search",'GET',{userId:userId,teamId:teamId})
     }
 }
 

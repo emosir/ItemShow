@@ -96,6 +96,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "recyclableRender", function() { return recyclableRender; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
 var components
+try {
+  components = {
+    uniSegmentedControl: function () {
+      return __webpack_require__.e(/*! import() | uni_modules/uni-segmented-control/components/uni-segmented-control/uni-segmented-control */ "uni_modules/uni-segmented-control/components/uni-segmented-control/uni-segmented-control").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-segmented-control/components/uni-segmented-control/uni-segmented-control.vue */ 245))
+    },
+  }
+} catch (e) {
+  if (
+    e.message.indexOf("Cannot find module") !== -1 &&
+    e.message.indexOf(".vue") !== -1
+  ) {
+    console.error(e.message)
+    console.error("1. 排查组件名称拼写是否正确")
+    console.error(
+      "2. 排查组件是否符合 easycom 规范，文档：https://uniapp.dcloud.net.cn/collocation/pages?id=easycom"
+    )
+    console.error(
+      "3. 若组件不符合 easycom 规范，需手动引入，并在 components 中注册该组件"
+    )
+  } else {
+    throw e
+  }
+}
 var render = function () {
   var _vm = this
   var _h = _vm.$createElement
@@ -133,16 +156,110 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {
 
-
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ 4);
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+var _team = _interopRequireDefault(__webpack_require__(/*! ../../api/team */ 70));
+var LikesAndShares = function LikesAndShares() {
+  __webpack_require__.e(/*! require.ensure | component/common/likesAndShares */ "component/common/likesAndShares").then((function () {
+    return resolve(__webpack_require__(/*! ../../component/common/likesAndShares.vue */ 286));
+  }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
+};
+var Overview = function Overview() {
+  Promise.all(/*! require.ensure | component/overview */[__webpack_require__.e("common/vendor"), __webpack_require__.e("component/overview")]).then((function () {
+    return resolve(__webpack_require__(/*! ../../component/overview.vue */ 140));
+  }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
+};
 var _default = {
-  name: "userShow"
+  name: "userShow",
+  components: {
+    Overview: Overview,
+    LikesAndShares: LikesAndShares
+  },
+  data: function data() {
+    return {
+      user: {},
+      leaderTotal: 1,
+      involveTotal: 1,
+      leaderPageSize: 1,
+      involvePageSize: 1,
+      leaderTeams: [],
+      involveTeams: [],
+      segmentsCurrent: 1,
+      segments: ['TA领导的团队', 'TA参与的团队']
+    };
+  },
+  onLoad: function onLoad(option) {
+    var _this = this;
+    this.user = JSON.parse(decodeURIComponent(option.show));
+    this.getShows(1);
+    _team.default.getUserInvolveTeams(this.user.id, 1).then(function (res) {
+      _this.leaderTeams = res.data.data;
+    }).catch(function (err) {
+      console.log(err);
+    });
+  },
+  methods: {
+    updateLikesAndShares: function updateLikesAndShares(data) {
+      this.user.likes = data.likes;
+      this.user.shares = data.shares;
+    },
+    checkFile: function checkFile() {
+      uni.openDocument({
+        filePath: this.user.filePath
+      });
+    },
+    contactUser: function contactUser() {
+      uni.navigateTo({
+        url: "/pages/eventAndMessage/MessageSender?recipient=" + this.user.leaderId
+      });
+    },
+    gotoTeamMember: function gotoTeamMember() {
+      uni.navigateTo({
+        url: "/pages/show/teamMemberShow?team=".concat(encodeURIComponent(JSON.stringify(this.user)))
+      });
+    },
+    ApplyJoin: function ApplyJoin() {
+      uni.navigateTo({
+        url: "/pages/eventAndMessage/applyJoinTeam?recipient=" + this.user.id
+      });
+    },
+    onClickSegment: function onClickSegment(e) {
+      if (this.segmentsCurrent !== e.currentIndex) {
+        this.segmentsCurrent = e.currentIndex;
+      }
+    },
+    getShows: function getShows(current) {
+      var _this2 = this;
+      switch (this.segmentsCurrent) {
+        case 0:
+          {
+            _team.default.getUserLeaderTeams(this.user.id, current).then(function (res) {
+              _this2.leaderTeams = res.data.data;
+            }).catch(function (err) {
+              console.log(err);
+            });
+            break;
+          }
+        case 1:
+          {
+            _team.default.getUserInvolveTeams(this.user.id, current).then(function (res) {
+              _this2.leaderTeams = res.data.data;
+            }).catch(function (err) {
+              console.log(err);
+            });
+            break;
+          }
+      }
+    }
+  }
 };
 exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ })
 

@@ -1,5 +1,6 @@
 {
   "usingComponents": {
+    "carousel": "/component/common/Carousel",
     "image-upload": "/component/upload/imageUpload",
     "search-bar": "/component/searchBar",
     "overview": "/component/overview"

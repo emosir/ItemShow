@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: "MessageUserList"
+  name: "userMessageList"
 }
 </script>
 

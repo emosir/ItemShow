@@ -12,8 +12,8 @@
         success: (res) => {
           userApi.login(res.code).then((res)=>{
             this.globalData.user=res.data.data.user;
-            showsOpe.getHeadImages([this.globalData.user]).then(shows=>{
-              this.globalData.user=shows
+            showsOpe.getHeadImage([this.globalData.user]).then(shows=>{
+              this.globalData.user=shows[0]
             }).catch(err=>{
               console.log("获取用户头像失败"+err)
             })

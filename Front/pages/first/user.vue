@@ -81,7 +81,9 @@ export default {
     }).catch(err=>{
       console.log(err)
     })
-    this.user=showsOpe.getHeadImages([this.user])
+    showsOpe.getHeadImage([this.user]).then(res=>{
+      this.user=res[0]
+    })
     eventAndMessageUrlApi.getUserEventAndMessage(this.user.id).then(res=>{
       this.setRes(res)
     }).catch(err=>{
@@ -112,7 +114,7 @@ export default {
     },
     gotoUserShow(){
       uni.navigateTo({
-        url: `/pages/show/userShow.vue?user=${encodeURIComponent(JSON.stringify(this.user))}`
+        url: `/pages/show/userShow.vue?show=${encodeURIComponent(JSON.stringify(this.user))}`
       });
     }
   }

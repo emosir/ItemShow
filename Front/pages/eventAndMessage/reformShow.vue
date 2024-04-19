@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: "MessageRecipient"
+  name: "reformShow"
 }
 </script>
 

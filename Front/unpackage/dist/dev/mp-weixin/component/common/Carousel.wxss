@@ -1,0 +1,10 @@
+
+.swiper-box {
+  height: 200px; /* 根据需要调整 */
+}
+.gallery-image {
+  width: 100%; /* 调整图片宽度以适应轮播容器 */
+  height: auto;
+  display: block;
+}
+

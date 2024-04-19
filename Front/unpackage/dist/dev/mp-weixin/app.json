@@ -1,11 +1,11 @@
 {
   "pages": [
-    "pages/createEdit/teamMemberEdit",
     "pages/first/index",
     "pages/first/workbenchEntrance",
     "pages/first/user",
     "pages/createEdit/itemCreateEdit",
     "pages/createEdit/teamCreateEdit",
+    "pages/createEdit/teamMemberEdit",
     "pages/createEdit/userEdit",
     "pages/show/itemShow",
     "pages/show/teamMemberShow",
