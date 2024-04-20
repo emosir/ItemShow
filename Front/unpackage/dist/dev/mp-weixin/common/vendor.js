@@ -12099,6 +12099,36 @@ module.exports = JSON.parse("{\"uni-pagination.prevText\":\"上一頁\",\"uni-pa
 
 /***/ }),
 
+/***/ 299:
+/*!************************************************************************************!*\
+  !*** C:/Users/asus/Desktop/EngineerStack/CodeRecords/ItemShow/Front/api/common.js ***!
+  \************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ 4);
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _http = _interopRequireDefault(__webpack_require__(/*! ./http */ 31));
+var commonUrl = _http.default.urlPrefix;
+var commonApi = {
+  likeOrDislike: function likeOrDislike(id, mode) {
+    return _http.default.http("".concat(commonUrl + "/like"), 'PATCH', {
+      id: id,
+      mode: mode
+    });
+  }
+};
+var _default = commonApi;
+exports.default = _default;
+
+/***/ }),
+
 /***/ 3:
 /*!***********************************!*\
   !*** (webpack)/buildin/global.js ***!
@@ -12595,6 +12625,28 @@ var eventAndMessageUrl = _http.default.urlPrefix + "/eventAndMessageUrl";
 var eventAndMessageUrlApi = {
   getUserEventAndMessage: function getUserEventAndMessage(id) {
     return _http.default.http("".concat(eventAndMessageUrl), 'GET', {
+      id: id
+    });
+  },
+  uploadMailBase: function uploadMailBase(eventId, state, senderId, recipientId, topic, description) {
+    return _http.default.http("".concat(eventAndMessageUrl, "/mail/base"), 'POST', {
+      eventId: eventId,
+      state: state,
+      senderId: senderId,
+      recipientId: recipientId,
+      topic: topic,
+      description: description
+    });
+  },
+  applyJoinTeam: function applyJoinTeam(senderId, recipientId, position) {
+    return _http.default.http("".concat(eventAndMessageUrl, "/join"), 'POST', {
+      senderId: senderId,
+      recipientId: recipientId,
+      position: position
+    });
+  },
+  getMailById: function getMailById(id) {
+    return _http.default.http("".concat(eventAndMessageUrl, "/mail/base"), 'GET', {
       id: id
     });
   }

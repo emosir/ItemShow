@@ -28,7 +28,7 @@ export default {
     this.user=getApp.globalData.user
     commonApi.likeOrDislike(this.user.id,1).then(res=>{
       this.flag= res.data.data.flag
-      this.$emit('newData', {"likes":res.data.data.likes,"shares":res.data.data.shares};
+      this.$emit('newData', {"likes":res.data.data.likes,"shares":res.data.data.shares});
     })
   },
   methods: {

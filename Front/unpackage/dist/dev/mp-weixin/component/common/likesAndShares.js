@@ -111,9 +111,60 @@ __webpack_require__.r(__webpack_exports__);
   !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--13-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/Users/asus/Desktop/EngineerStack/CodeRecords/ItemShow/Front/component/common/likesAndShares.vue?vue&type=script&lang=js& ***!
   \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js):\nSyntaxError: Unexpected token, expected \",\" (31:87)\n    at instantiate (D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:67:32)\n    at constructor (D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:364:12)\n    at TypeScriptParserMixin.raise (D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:3365:19)\n    at TypeScriptParserMixin.unexpected (D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:3398:16)\n    at TypeScriptParserMixin.expect (D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:3761:28)\n    at TypeScriptParserMixin.parseCallExpressionArguments (D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:11353:14)\n    at TypeScriptParserMixin.parseCoverCallAndAsyncArrowHead (D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:11279:29)\n    at TypeScriptParserMixin.parseSubscript (D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:11210:19)\n    at TypeScriptParserMixin.parseSubscript (D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:9056:18)\n    at TypeScriptParserMixin.parseSubscripts (D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:11184:19)\n    at TypeScriptParserMixin.parseExprSubscripts (D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:11175:17)\n    at TypeScriptParserMixin.parseUpdate (D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:11153:21)\n    at TypeScriptParserMixin.parseMaybeUnary (D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:11127:23)\n    at TypeScriptParserMixin.parseMaybeUnary (D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:9590:20)\n    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:10956:61)\n    at TypeScriptParserMixin.parseExprOps (D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:10962:23)\n    at TypeScriptParserMixin.parseMaybeConditional (D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:10937:23)\n    at TypeScriptParserMixin.parseMaybeAssign (D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:10895:21)\n    at TypeScriptParserMixin.parseMaybeAssign (D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:9529:20)\n    at TypeScriptParserMixin.parseExpressionBase (D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:10845:23)\n    at D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:10840:39\n    at TypeScriptParserMixin.allowInAnd (D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:12635:16)\n    at TypeScriptParserMixin.parseExpression (D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:10840:17)\n    at TypeScriptParserMixin.parseStatementContent (D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:13096:23)\n    at TypeScriptParserMixin.parseStatementContent (D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:9223:18)\n    at TypeScriptParserMixin.parseStatementLike (D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:12952:17)\n    at TypeScriptParserMixin.parseStatementListItem (D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:12937:17)\n    at TypeScriptParserMixin.parseBlockOrModuleBlockBody (D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:13558:61)\n    at TypeScriptParserMixin.parseBlockBody (D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:13550:10)\n    at TypeScriptParserMixin.parseBlock (D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:13538:10)\n    at TypeScriptParserMixin.parseFunctionBody (D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:12287:24)\n    at TypeScriptParserMixin.parseArrowExpression (D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:12260:10)\n    at TypeScriptParserMixin.parseExprAtom (D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:11564:25)\n    at TypeScriptParserMixin.parseExprSubscripts (D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:11171:23)\n    at TypeScriptParserMixin.parseUpdate (D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:11153:21)\n    at TypeScriptParserMixin.parseMaybeUnary (D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:11127:23)\n    at TypeScriptParserMixin.parseMaybeUnary (D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:9590:20)\n    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:10956:61)\n    at TypeScriptParserMixin.parseExprOps (D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:10962:23)\n    at TypeScriptParserMixin.parseMaybeConditional (D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:10937:23)\n    at TypeScriptParserMixin.parseMaybeAssign (D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:10895:21)\n    at TypeScriptParserMixin.parseMaybeAssign (D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:9529:20)\n    at D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:10863:39\n    at TypeScriptParserMixin.allowInAnd (D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:12640:12)\n    at TypeScriptParserMixin.parseMaybeAssignAllowIn (D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:10863:17)\n    at TypeScriptParserMixin.parseExprListItem (D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:12380:18)\n    at TypeScriptParserMixin.parseCallExpressionArguments (D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:11367:22)\n    at TypeScriptParserMixin.parseCoverCallAndAsyncArrowHead (D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:11279:29)\n    at TypeScriptParserMixin.parseSubscript (D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:11210:19)\n    at TypeScriptParserMixin.parseSubscript (D:\\Tool PRo\\HBuilderX.3.98.2023112510\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:9056:18)");
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ 4);
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _common = _interopRequireDefault(__webpack_require__(/*! ../../api/common */ 299));
+var CopyId = function CopyId() {
+  Promise.all(/*! require.ensure | component/common/copyId */[__webpack_require__.e("common/vendor"), __webpack_require__.e("component/common/copyId")]).then((function () {
+    return resolve(__webpack_require__(/*! ./copyId.vue */ 187));
+  }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
+};
+var _default = {
+  name: 'likesAndShares',
+  components: {
+    CopyId: CopyId
+  },
+  props: ['likes', 'shares', 'showId'],
+  data: function data() {
+    return {
+      user: {},
+      flag: false //true表示该用户已经点赞，否则表示没有点赞
+    };
+  },
+  onLoad: function onLoad() {
+    var _this = this;
+    this.user = getApp.globalData.user;
+    _common.default.likeOrDislike(this.user.id, 1).then(function (res) {
+      _this.flag = res.data.data.flag;
+      _this.$emit('newData', {
+        "likes": res.data.data.likes,
+        "shares": res.data.data.shares
+      });
+    });
+  },
+  methods: {
+    likeOrDislike: function likeOrDislike() {
+      var _this2 = this;
+      _common.default.likeOrDislike(this.user.id, 0).then(function (res) {
+        _this2.flag = res.data.data.flag;
+        _this2.$emit('newData', {
+          "likes": res.data.data.likes,
+          "shares": res.data.data.shares
+        });
+      });
+    },
+    shareTo: function shareTo() {}
+  }
+};
+exports.default = _default;
 
 /***/ }),
 
@@ -148,3 +199,12 @@ __webpack_require__.r(__webpack_exports__);
 
 }]);
 //# sourceMappingURL=../../../.sourcemap/mp-weixin/component/common/likesAndShares.js.map
+;(global["webpackJsonp"] = global["webpackJsonp"] || []).push([
+    'component/common/likesAndShares-create-component',
+    {
+        'component/common/likesAndShares-create-component':(function(module, exports, __webpack_require__){
+            __webpack_require__('2')['createComponent'](__webpack_require__(234))
+        })
+    },
+    [['component/common/likesAndShares-create-component']]
+]);

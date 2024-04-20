@@ -165,7 +165,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var _team = _interopRequireDefault(__webpack_require__(/*! ../../api/team */ 70));
 var LikesAndShares = function LikesAndShares() {
-  __webpack_require__.e(/*! require.ensure | component/common/likesAndShares */ "component/common/likesAndShares").then((function () {
+  Promise.all(/*! require.ensure | component/common/likesAndShares */[__webpack_require__.e("common/vendor"), __webpack_require__.e("component/common/likesAndShares")]).then((function () {
     return resolve(__webpack_require__(/*! ../../component/common/likesAndShares.vue */ 234));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
