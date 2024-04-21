@@ -17,6 +17,7 @@
   import SearchBar from "../../component/searchBar.vue";
   import imageUpload from "../../component/upload/imageUpload.vue";
   import Carousel from "../../component/common/Carousel.vue";
+  import popup from "../../common/popup";
   export default {
     components: {Carousel, imageUpload,SearchBar, Overview},
     computed: {
@@ -39,6 +40,9 @@
 		onLoad() {
       this.getShows(1)
 		},
+    onShow(){
+
+    },
 		methods: {
       //分页获取项目、同时获取图片，
       getShows(current){

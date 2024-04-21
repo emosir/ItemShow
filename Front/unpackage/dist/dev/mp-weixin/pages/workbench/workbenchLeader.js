@@ -145,7 +145,7 @@ var _showsOpe = _interopRequireDefault(__webpack_require__(/*! ../../common/show
 var _file = _interopRequireDefault(__webpack_require__(/*! ../../api/file */ 33));
 var LikesAndShares = function LikesAndShares() {
   Promise.all(/*! require.ensure | component/common/likesAndShares */[__webpack_require__.e("common/vendor"), __webpack_require__.e("component/common/likesAndShares")]).then((function () {
-    return resolve(__webpack_require__(/*! ../../component/common/likesAndShares.vue */ 234));
+    return resolve(__webpack_require__(/*! ../../component/common/likesAndShares.vue */ 246));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var Overview = function Overview() {

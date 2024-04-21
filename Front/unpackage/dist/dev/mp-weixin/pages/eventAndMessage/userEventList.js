@@ -99,10 +99,10 @@ var components
 try {
   components = {
     uniList: function () {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-list/components/uni-list/uni-list */ "uni_modules/uni-list/components/uni-list/uni-list").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-list/components/uni-list/uni-list.vue */ 173))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-list/components/uni-list/uni-list */ "uni_modules/uni-list/components/uni-list/uni-list").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-list/components/uni-list/uni-list.vue */ 185))
     },
     uniListItem: function () {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-list/components/uni-list-item/uni-list-item */ "uni_modules/uni-list/components/uni-list-item/uni-list-item").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-list/components/uni-list-item/uni-list-item.vue */ 180))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-list/components/uni-list-item/uni-list-item */ "uni_modules/uni-list/components/uni-list-item/uni-list-item").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-list/components/uni-list-item/uni-list-item.vue */ 192))
     },
   }
 } catch (e) {
@@ -167,25 +167,9 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var UniListItem = function UniListItem() {
   __webpack_require__.e(/*! require.ensure | uni_modules/uni-list/components/uni-list-item/uni-list-item */ "uni_modules/uni-list/components/uni-list-item/uni-list-item").then((function () {
-    return resolve(__webpack_require__(/*! ../../uni_modules/uni-list/components/uni-list-item/uni-list-item.vue */ 180));
+    return resolve(__webpack_require__(/*! ../../uni_modules/uni-list/components/uni-list-item/uni-list-item.vue */ 192));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
-// "id": "even43995",
-// "sender": "userwx2341ds",
-// "recipient": "userwx45ff",
-// "topic": "the topic",
-// "state": false,
-// "nowStep": 0,
-// "startTime": "2024-9-3",
-// "Steps": [
-//   {
-//     "id": 0,
-//     "name": "this is a step name",
-//     "state": true,
-//     "message": "mess23145ds",
-//     "lastModifyTime": "2024-9-4"
-//   }
-// ]
 var _default = {
   name: "userEventList",
   components: {

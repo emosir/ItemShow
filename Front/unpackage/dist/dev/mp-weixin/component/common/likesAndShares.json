@@ -1,6 +1,6 @@
 {
-  "component": true,
   "usingComponents": {
     "copy-id": "/component/common/copyId"
-  }
+  },
+  "component": true
 }

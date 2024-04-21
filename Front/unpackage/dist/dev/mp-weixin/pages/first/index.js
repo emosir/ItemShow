@@ -142,6 +142,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var _item = _interopRequireDefault(__webpack_require__(/*! ../../api/item */ 43));
 var _showsOpe = _interopRequireDefault(__webpack_require__(/*! ../../common/showsOpe */ 32));
+var _popup = _interopRequireDefault(__webpack_require__(/*! ../../common/popup */ 44));
 //
 //
 //
@@ -202,6 +203,7 @@ var _default = {
   onLoad: function onLoad() {
     this.getShows(1);
   },
+  onShow: function onShow() {},
   methods: {
     //分页获取项目、同时获取图片，
     getShows: function getShows(current) {

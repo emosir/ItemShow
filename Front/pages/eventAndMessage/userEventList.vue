@@ -28,22 +28,7 @@
 <script>
 import UniListItem from "../../uni_modules/uni-list/components/uni-list-item/uni-list-item.vue";
 
-// "id": "even43995",
-// "sender": "userwx2341ds",
-// "recipient": "userwx45ff",
-// "topic": "the topic",
-// "state": false,
-// "nowStep": 0,
-// "startTime": "2024-9-3",
-// "Steps": [
-//   {
-//     "id": 0,
-//     "name": "this is a step name",
-//     "state": true,
-//     "message": "mess23145ds",
-//     "lastModifyTime": "2024-9-4"
-//   }
-// ]
+
 export default {
   name: "userEventList",
   components: {UniListItem},

@@ -99,7 +99,7 @@ var components
 try {
   components = {
     uniSegmentedControl: function () {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-segmented-control/components/uni-segmented-control/uni-segmented-control */ "uni_modules/uni-segmented-control/components/uni-segmented-control/uni-segmented-control").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-segmented-control/components/uni-segmented-control/uni-segmented-control.vue */ 241))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-segmented-control/components/uni-segmented-control/uni-segmented-control */ "uni_modules/uni-segmented-control/components/uni-segmented-control/uni-segmented-control").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-segmented-control/components/uni-segmented-control/uni-segmented-control.vue */ 165))
     },
   }
 } catch (e) {
@@ -163,10 +163,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-var _team = _interopRequireDefault(__webpack_require__(/*! ../../api/team */ 70));
+var _team = _interopRequireDefault(__webpack_require__(/*! ../../api/team */ 51));
 var LikesAndShares = function LikesAndShares() {
   Promise.all(/*! require.ensure | component/common/likesAndShares */[__webpack_require__.e("common/vendor"), __webpack_require__.e("component/common/likesAndShares")]).then((function () {
-    return resolve(__webpack_require__(/*! ../../component/common/likesAndShares.vue */ 234));
+    return resolve(__webpack_require__(/*! ../../component/common/likesAndShares.vue */ 246));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var Overview = function Overview() {

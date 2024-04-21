@@ -7,7 +7,6 @@
     </view>
     <uni-pagination :show-icon="true" :total=total :current=current :pageSize=pageSize @tap="changePage"></uni-pagination>
   </view>
-
 </template>
 
 
